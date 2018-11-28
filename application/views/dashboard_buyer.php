@@ -476,14 +476,20 @@
                 <div class="nav-tabs-top mb-4">
                   <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#sale-stats">Products</a>
+                      <a class="nav-link active" data-toggle="tab" href="#Current">Current</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#latest-sales">Latest sales</a>
+                      <a class="nav-link" data-toggle="tab" href="#Failed">Failed</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#on-Delivery">On Delivery </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#Delivery">Delivery </a>
                     </li>
                   </ul>
                   <div class="tab-content">
-                    <div class="tab-pane fade show active" id="sale-stats">
+                    <div class="tab-pane fade show active" id="Current">
                       <table class="table card-table" id="ex-stats">
                         <thead>
                           <tr>
@@ -514,67 +520,97 @@
                       </table>
                       <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
                     </div>
-                    <div class="tab-pane fade" id="latest-sales">
-                      <table class="table card-table">
+                    <div class="tab-pane fade show" id="Failed">
+                      <table class="table card-table" id="ex-stats">
                         <thead>
                           <tr>
-                            <th>Product</th>
-                            <th>Qty.</th>
-                            <th>Sum.</th>
+                            <th>No</th>
+                            <th>product</th>
+                            <th>Prod&nbsp;Id</th>
+                            <th>Seller</th>
+                          <!--  <th>Email</th>
+                            <th>mobile_number</th>-->
+                            <th>max&nbsp;Quantity</th>
+                            <th>Current&nbsp;Quantity</th>
                           </tr>
                         </thead>
                         <tbody>
+                        <?php $i=1; foreach($get_product_quinity as $list) { ?>
                           <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">PlayStation 4 1TB (Jet Black)</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$480.00</td>
+                            <td><?php echo  $i;  ?></td>
+                            <td><?php echo  $list['prod_name'];  ?></td>
+                            <td><?php echo  $list['prod_id'];  ?></td>
+                            <td><?php echo  $list['business_name'];  ?></td>
+                            <!--<td><?php //echo  $list['email_id'];  ?></td>
+                            <td><?php //echo  $list['mobile_number'];  ?></td>-->
+                            <td><?php echo  $list['max(qvp.quantity)'];  ?></td>
+                            <td><?php echo  $list['pquqnity'];  ?></td>
                           </tr>
+                          <?php $i++; } ?>
+                          </tbody>
+                      </table>
+                      <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
+                    </div>
+                    <div class="tab-pane fade show" id="on-Delivery">
+                      <table class="table card-table" id="ex-stats">
+                        <thead>
                           <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Nike Men Black Liteforce III Sneakers</a>
-                            </td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">$115.1</td>
+                            <th>No</th>
+                            <th>product</th>
+                            <th>Prod&nbsp;Id</th>
+                            <th>Seller</th>
+                          <!--  <th>Email</th>
+                            <th>mobile_number</th>-->
+                            <th>max&nbsp;Quantity</th>
+                            <th>Current&nbsp;Quantity</th>
                           </tr>
+                        </thead>
+                        <tbody>
+                        <?php $i=1; foreach($get_product_quinity as $list) { ?>
                           <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Wireless headphones</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$235.55</td>
+                            <td><?php echo  $i;  ?></td>
+                            <td><?php echo  $list['prod_name'];  ?></td>
+                            <td><?php echo  $list['prod_id'];  ?></td>
+                            <td><?php echo  $list['business_name'];  ?></td>
+                            <!--<td><?php //echo  $list['email_id'];  ?></td>
+                            <td><?php //echo  $list['mobile_number'];  ?></td>-->
+                            <td><?php echo  $list['max(qvp.quantity)'];  ?></td>
+                            <td><?php echo  $list['pquqnity'];  ?></td>
                           </tr>
+                          <?php $i++; } ?>
+                          </tbody>
+                      </table>
+                      <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
+                    </div>
+                    
+                    <div class="tab-pane fade show" id="Delivery">
+                      <table class="table card-table" id="ex-stats">
+                        <thead>
                           <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">HERO ATHLETES BAG</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$160.00</td>
+                            <th>No</th>
+                            <th>product</th>
+                            <th>Prod&nbsp;Id</th>
+                            <th>Seller</th>
+                          <!--  <th>Email</th>
+                            <th>mobile_number</th>-->
+                            <th>max&nbsp;Quantity</th>
+                            <th>Current&nbsp;Quantity</th>
                           </tr>
+                        </thead>
+                        <tbody>
+                        <?php $i=1; foreach($get_product_quinity as $list) { ?>
                           <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">POÄNG</a>
-                            </td>
-                            <td class="align-middle">3</td>
-                            <td class="align-middle">$477.00</td>
+                            <td><?php echo  $i;  ?></td>
+                            <td><?php echo  $list['prod_name'];  ?></td>
+                            <td><?php echo  $list['prod_id'];  ?></td>
+                            <td><?php echo  $list['business_name'];  ?></td>
+                            <!--<td><?php //echo  $list['email_id'];  ?></td>
+                            <td><?php //echo  $list['mobile_number'];  ?></td>-->
+                            <td><?php echo  $list['max(qvp.quantity)'];  ?></td>
+                            <td><?php echo  $list['pquqnity'];  ?></td>
                           </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Apple iWatch (black)</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$399.00</td>
-                          </tr>
-                          <tr>
-
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">WALKING 400 BLUE CAT3</a>
-                            </td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">$41.1</td>
-                          </tr>
-                        </tbody>
+                          <?php $i++; } ?>
+                          </tbody>
                       </table>
                       <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
                     </div>
