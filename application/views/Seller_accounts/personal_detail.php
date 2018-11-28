@@ -189,9 +189,26 @@
             <!-- personal info End -->
 
             <!-- Business Detail -->
-            <div class="card mb-4">
+            <!-- <div class="card mb-4"> -->
                   <h6 class="card-header">Business Details</h6>
-                  <div class="card-body p-3">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <div class="card-body">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="javascript:void(0)" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                    </div><div class="col-md-1">ds</div>
+                    <div class="col-md-5">
+                      <div class="card-body">
+                    <h4 class="card-title">Special title treatment</h4>
+                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <a href="javascript:void(0)" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                    </div>
+                    
+                  </div>
+                  <!-- <div class="card-body p-3">
                     <div class="row no-gutters">
                       <div class="col-md-6 col-lg-12 col-xl-6 p-1">
                          <table class="table user-view-table m-0">
@@ -242,8 +259,8 @@
                       </div>
                      
                     </div>
-                  </div>
-            </div>
+                  </div> -->
+            <!-- </div> -->
           <!-- Business detail End -->
 
           <!--  Bank Detail start -->

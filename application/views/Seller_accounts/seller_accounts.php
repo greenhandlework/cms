@@ -44,10 +44,8 @@
               <form action="" method="post" id='search_form'>
               <div class="form-row">
                 <div class="col-md mb-4">
-                  <label class="form-label pb-1">Sales
-                    <span id="product-sales-slider-value" class="text-muted font-weight-normal ml-2">10 - 834</span>
-                  </label>
-                  <div id="product-sales-slider" class="product-list-slider my-3 mx-2 noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="10"><div class="noUi-tooltip">10</div></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="834"><div class="noUi-tooltip">834</div></div></div></div></div>
+                  <label class="form-label pb-1">Activation Date  </label>
+                  <input type="text" id="b-m-dtp-date" class="form-control" name="activation_date" placeholder="Date" data-dtp="dtp_dXxc9">
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Status</label>

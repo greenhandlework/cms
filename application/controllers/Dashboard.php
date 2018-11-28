@@ -36,7 +36,12 @@ class Dashboard extends CI_Controller
         //////////////////////////////////////////////////////////////////////////////////
 		
 		//$query = $this->db->query("select DISTINCT a.user_id from login a,products b where a.user_id = b.seller_id");
-		$query = $this->db->query("Select count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='Yes' AND EXISTS(Select * FROM products as p WHERE a.user_id =p.seller_id)");
+		//$query = $this->db->query("Select count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='Yes' AND EXISTS(Select * FROM products as p WHERE a.user_id =p.seller_id)");
+		$query = $this->db->query("SELECT COUNT(*) as count
+FROM (
+Select count(seller_id)  FROM products WHERE product_status= '2' GROUP BY seller_id
+) seller_id");
+
 		$data['Vendor'] = $query->row();
         //////////////////////////////////////////////////////////////////////////////////
 		$query = $this->db->query("Select count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='Offline'");

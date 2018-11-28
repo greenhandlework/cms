@@ -40,7 +40,12 @@ class Seller_accounts extends CI_Controller
 		// print_r($_POST); exit();
 		$seller_status = $this->input->post('seller_status');
 		$search_seller = $this->input->post('search_seller');
+		$activation_date = $this->input->post('activation_date');
 
+		$d='';
+		if(!empty($activation_date)){
+			$d .=" and l.account_creation_date like '%".$activation_date."%' ";
+		}
 		$h = '';
 		
 		if(!empty($search_seller)){
@@ -55,8 +60,8 @@ class Seller_accounts extends CI_Controller
 				$h .=" AND NOT EXISTS(Select * FROM products as p  WHERE l.user_id =p.seller_id)";
 			}
 
-			$query1 = " SELECT l.* from login l where l.role_id=5 ".$h." ";			   
-
+			$query1 = " SELECT l.* from login l where l.role_id=5 ".$h." ".$d." ";			   
+			// print_r($query1); exit();
 			$data['seller'] = $this->db->query($query1)->result_array();
 			 
 			 	
@@ -75,12 +80,12 @@ class Seller_accounts extends CI_Controller
 					 from login l
 					 join products p
 					   on p.seller_id=l.user_id
-					   ".$h."";		
+					   ".$h." ".$d." ";		
 			// print_r($query); exit();
 			$data['seller'] = $this->db->query($query)->result_array();			
 
 		}	 
-		 // echo $this->db->last_query(); exit();
+		  // echo $this->db->last_query(); exit();
 		$this->load->view('Seller_accounts/seller_account_ajax',$data);
 
 	}
