@@ -4,7 +4,7 @@
 <html lang="en" class="default-style">
 
 <head>
-  <title>CMS - Account Detailk</title>
+  <title>CMS - Account Details</title>
   <?php 
    $this->load->view('hfs/html_header') ?>
 </head>
@@ -80,7 +80,7 @@
               <div class="col-md-4 ">
                <div class="card mb-4 ">
                   <div class="w-100">
-                    <a href="<?= ADMIN_PATH.'seller_accounts/order_list'?>" class="card-img-top d-block ui-rect-60 ui-bg-cover" style="background-image: url('<?= ADMIN_PATH.'upload/seller_document/demo_image.jpg' ?>');">
+                    <a href="<?= ADMIN_PATH.'seller_accounts/order_list/'?><?php echo $seller_id ?>" class="card-img-top d-block ui-rect-60 ui-bg-cover" style="background-image: url('<?= ADMIN_PATH.'upload/seller_document/demo_image.jpg' ?>');">
                       <div class="d-flex justify-content-between align-items-end ui-rect-content p-3">
                         <div class="flex-shrink-1">
                           <span class="badge badge-primary">Orders</span>    

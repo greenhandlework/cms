@@ -33,21 +33,22 @@
           <!-- Content -->
          <div class="container-fluid flex-grow-1 container-p-y">
 
-            <!-- <h4 class="d-flex justify-content-between align-items-center w-100 font-weight-bold py-3 mb-4">
-              <div>Order Details</div>
-              <button type="button" class="btn btn-primary btn-round d-block">
-                <span class="ion ion-md-add"></span>&nbsp; Add product</button>
-            </h4> -->
+            <div class="media align-items-center py-3 mb-3">
+            
+              <div class="media-body ml-4">
+                <h4 class="font-weight-bold mb-0">Order List                  
+                </h4>
+               
+              </div>
+            </div>
 
             <!-- Filters -->
             <div class="ui-bordered px-4 pt-4 mb-4">
-              <form action="" method="post" id='search_form'>
+              <form action="#" method="post" id='search_form'>
               <div class="form-row">
                 <div class="col-md mb-4">
-                  <label class="form-label pb-1">Sales
-                    <span id="product-sales-slider-value" class="text-muted font-weight-normal ml-2">10 - 834</span>
-                  </label>
-               <input type="text" id="b-m-dtp-date" class="form-control" name="order_date" placeholder="Date" data-dtp="dtp_u0u3J" >
+                  <label class="form-label pb-1">Order Date</label>
+                  <input type="text" id="b-m-dtp-date" name="order_date" class="form-control" placeholder="Date" data-dtp="dtp_x0bm2">
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Status</label>
@@ -63,6 +64,7 @@
                 <div class="col-md mb-4">
                   <label class="form-label">Search</label>
                   <input type="text" class="form-control" placeholder="Search" name="search">
+                  <input type="hidden" name="seller_id" value="<?php echo $seller_order[0]['seller_id']; ?>">
                 </div> 
                   <div class="col-md col-xl-2 mb-4">
                   <label class="form-label d-none d-md-block">&nbsp;</label>
@@ -81,28 +83,28 @@
         <thead>
             <tr>
                 <th>Product</th>
-                  <th>Order&nbsp;Id</th>
-                 <!--  <th>Order&nbsp;Date</th>
-                  <th>Shipping&nbsp;Date</th> -->
-                  <th>Email</th>
-                  <th>Mobile&nbsp;No.</th>
-                  <th>Status</th>
-                  <th>View</th>
+                <th>Product&nbsp;Id<label class="col-form-label col-form-label-sm  text-sm-right">(GHPRODID_)</label></th>
+                <th>Order&nbsp;Id<label class="col-form-label col-form-label-sm  text-sm-right">(GHTRID_)</label></th>
+                <th>Order&nbsp;Date</th>
+                <th>Shipping&nbsp;Date</th>                
+                <th>Status</th>
+                <th>View</th>
             </tr>
         </thead>
          <tbody id="tc">
-                <?php $i=1;
-                  foreach ($cart_data as $key => $value) { 
-                    // $image = ADMIN_PATH.'' 
-                   ?>
-                   <tr >
-                   <td class="py-2 align-middle" style="min-width: 300px;"><div class="media align-items-center"><img class="ui-w-40 d-block" src="<?= ADMIN_IMAGE_PATH.'uikit/ps4.jpg'?>" alt=""><span class="media-body d-block text-dark ml-3"><?php echo $value['prod_name'] ?></span></div></td>
-                    <td><?php echo str_replace('GHTRID_','',$value['Order_id']); ?></td>
-                   <!--  <td><?php echo $value['ordered_date']; ?></td> -->
-                    <!-- <td></td> -->
-                    <td><?php echo $value['email']; ?></td>
-                    <td><?php echo $value['mobile_number']; ?></td>
-                    <td><?php if($value['order_status']=='Order'){ ?>
+            <?php 
+              foreach ($seller_order as $key => $value) { 
+                $product_id = str_replace('GHPRODID_','' , $value['product_id']);
+                $order_id   = str_replace('GHTRID_','', $value['Order_id']);
+                $date = new DateTime($value['ordered_date']);
+                ?>
+              <tr>
+                <td class="py-2 align-middle" style="min-width: 300px;"><div class="media align-items-center"><img class="ui-w-40 d-block" src="<?= ADMIN_IMAGE_PATH.'uikit/ps4.jpg'?>" alt=""><span class="media-body d-block text-dark ml-3"><?php echo $value['prod_name'] ?></span></div></td>
+                <td><?php echo $product_id; ?></td>
+                <td><?php echo$order_id; ?></td>
+                <td><?php echo  $date->format('d-m-Y');  ?></td>
+                <td><?php echo 'comming soon.' ?></td>
+                 <td><?php if($value['order_status']=='Order'){ ?>
                         <span class="badge badge-outline-success"><?php echo $value['order_status']; ?></span>
                        <?php }elseif($value['order_status']=='Production'){ ?>
                         <span class="badge badge-outline-secondary"><?php echo $value['order_status']; ?></span>
@@ -119,11 +121,14 @@
                      <!--  <span class="badge badge-outline-success"><?php echo $value['order_status']; ?></span> -->
 
                       </td>
-                    <td><a href="<?= ADMIN_PATH.'order_details/order_detail/'?><?php echo $value['Order_id'] ?>/<?php echo $value['cart_product_id']?>" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a></td>
-                  </tr>    
-                <?php }  ?>              
+                <td><a href="<?= ADMIN_PATH.'seller_accounts/order_detail_page/'?><?php echo $value['Order_id'] ?>/<?php echo $value['cart_product_id']?> " class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip" title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a></td>
+
+            </tr>    
+            <?php } ?>
+
+                              
              
-              </tbody>
+          </tbody>
       
     </table></div>
             </div>
@@ -150,14 +155,29 @@
       $('#search_btn').click(function(){
         
         $.ajax({
-          url  : "<?= ADMIN_PATH.'order_details/get' ?>",
+          url  : "<?= ADMIN_PATH.'seller_accounts/order_list_ajax' ?>",
           data : $('#search_form').serialize(),
           type : "POST",
 
           success:function(resp){
             console.log(resp);
-             $('#cng_tbl').html(resp);
-           
+            return;
+            var json = JSON.parse(resp);
+            var content = '';
+            for(var i=0; i<json.length;i++){
+              content +='<tr>';
+              content +='<td>'+  i+1 +'</td>';
+              content +='<td>'+ json[i].payment_date+'</td>';
+              content +='<td>'+ json[i].email+'</td>';
+              content +='<td>'+ json[i].product_id+'</td>';
+              content +='<td>'+ json[i].payment_Amount+'</td>';
+              content +='<td>'+ json[i].ordered_date+'</td>';
+              content +='<td><a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip" title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a></td>';
+              content +='</tr>';
+            }
+
+
+            $('#tc').html(content);
           }
         })
       });

@@ -52,339 +52,300 @@
               </div>
             </div>
             <!-- personal info End -->
-        
-             <div class="card mb-4">
-                  <h6 class="card-header alert alert-primary alert-dismissible fade show">Personal Details</h6>
-                  <div class="card-body p-3">
-                    <div class="row no-gutters">
-                      <div class="col-md-6 col-lg-12 col-xl-6 p-1" id="hr">
-                        
-                        <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Seller&nbsp;Name&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['name']; ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Address&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['address_1']; ?>&nbsp;<?= $seller_data[0]['address_2']; ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">City&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['city']; ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Zipcode&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['zipcode']; ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Mobile No.&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['mobile_number']; ?></label>
-                          </div>
-                        </div>
-
-                      <!--    <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Seller&nbsp;Name:</td>
-                                <td><?= $seller_data[0]['name']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>Address:</td>
-                                <td><?= $seller_data[0]['address_1']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>City:</td>
-                                <td><?= $seller_data[0]['city']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>Zipcode:</td>
-                                <td><?= $seller_data[0]['zipcode']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>Mobile No.:</td>
-                               <td><?= $seller_data[0]['mobile_number']; ?></td>
-                              </tr>
-                            </tbody>
-                          </table>                     -->
-                      </div>
-
-                      <div class="col-md-6 col-lg-12 col-xl-6 p-1" >
-
-                        <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Business&nbsp;&nbsp;Name&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?php if(isset($seller_data[0]['business_name'])){
-                                      echo $seller_data[0]['business_name'];
-                                    } ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">State&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['state']; ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Email&nbsp;:</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['email']; ?></label>
-                          </div>
-                        </div>
-
-                         <div class="form-group row">
-                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Registration&nbsp;Date&nbsp;</label>
-                          <div class="col-sm-8">
-                            <label class="col-form-label col-form-label-sm "><?= $seller_data[0]['account_creation_date']; ?></label>
-                          </div>
-                        </div>
-
-                         
-
-                        <!--  <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Business&nbsp;&nbsp;Name:</td>
-                                <td><?php if(isset($seller_data[0]['business_name'])){
-                                      echo $seller_data[0]['business_name'];
-                                    } ?>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>Address:</td>
-                                <td><?= $seller_data[0]['address_2']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>State:</td>
-                                <td><?= $seller_data[0]['state']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>Email:</td>
-                                <td><?= $seller_data[0]['state']; ?></td>
-                              </tr>
-                              <tr>
-                                <td>Registration Date:</td>
-                                <td><?= $seller_data[0]['account_creation_date']; ?></td>
-                              </tr>
-                            </tbody>
-                          </table> -->
-                      </div>
-                     
+                 <h6 class="card-header alert alert-primary alert-dismissible fade show">Personal&nbsp;Details</h6>
+                      
+            <div class="row" style="margin-top:-16px">
+              <div class="col-md-6" style="padding-right: 1px;">
+              <div class="card ">
+                 <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Seller&nbsp;Name&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['account_holder'])){
+                                    echo $seller_data[0]['account_holder'];
+                                  } ?></label>
                     </div>
                   </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Address&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?= $seller_data[0]['address_1']; ?>&nbsp;<?= $seller_data[0]['address_2']; ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">City&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['city'])){
+                                    echo $seller_data[0]['city'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                        <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Zipcode&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['zipcode'])){
+                                    echo $seller_data[0]['zipcode'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Mobile&nbsp;No.&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['mobile_number'])){
+                                    echo $seller_data[0]['mobile_number'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  </div>
+
+                  </div>
+              </div>
+           
+              <div class="col-md-6" style="padding-left: 2px;">
+            <div class="card ">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Business&nbsp;Name&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['business_name'])){
+                                    echo $seller_data[0]['business_name'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">State&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['state'])){
+                                    echo $seller_data[0]['state'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                     <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Email&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['email'])){
+                                    echo $seller_data[0]['email'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            </div> 
+            <br> 
+           
             <!-- personal info End -->
 
-            <!-- Business Detail -->
-            <!-- <div class="card mb-4"> -->
-                  <h6 class="card-header">Business Details</h6>
-                  <div class="row">
-                    <div class="col-md-5">
-                      <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="javascript:void(0)" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                    </div><div class="col-md-1">ds</div>
-                    <div class="col-md-5">
-                      <div class="card-body">
-                    <h4 class="card-title">Special title treatment</h4>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="javascript:void(0)" class="btn btn-primary">Go somewhere</a>
-                  </div>
-                    </div>
-                    
-                  </div>
-                  <!-- <div class="card-body p-3">
-                    <div class="row no-gutters">
-                      <div class="col-md-6 col-lg-12 col-xl-6 p-1">
-                         <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Business Name : </td>
-                                <td>
-                                  <?php if(isset($seller_data[0]['business_name'])){
-                                    echo $seller_data[0]['business_name'];
-                                  } ?>
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>GSTIN :</td>
-                                <td><?php if(isset($seller_data[0]['biz_gst'])){
-                                    echo $seller_data[0]['biz_gst'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>TAN Number :</td>
-                                <td><?php if(isset($seller_data[0]['tan'])){
-                                    echo $seller_data[0]['tan'];
-                                  } ?></td>
-                              </tr>
-                              
-                            </tbody>
-                          </table>                    
-                      </div>
+            <!-- Business Detail -->           
+            <h6 class="card-header alert alert-primary alert-dismissible fade show">Business Details</h6>
 
-                      <div class="col-md-6 col-lg-12 col-xl-6 p-1" id="hr">
-                         <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>PAN Number :</td>
-                                <td><?php if(isset($seller_data[0]['pan'])){
-                                    echo $seller_data[0]['pan'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Legal Identity :</td>
-                                <td><?php if(isset($seller_data[0]['Legal_Identity'])){
-                                    echo $seller_data[0]['Legal_Identity'];
-                                  } ?></td>
-                              </tr>
-                              
-                            </tbody>
-                          </table>
-                      </div>
-                     
+            <div class="row" style="margin-top:-16px">
+              <div class="col-md-6" style="padding-right: 1px;">
+              <div class="card ">
+                 <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Business&nbsp;Name&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['business_name'])){
+                                    echo $seller_data[0]['business_name'];
+                                  } ?></label>
                     </div>
-                  </div> -->
-            <!-- </div> -->
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">GSTIN&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['biz_gst'])){
+                                    echo $seller_data[0]['biz_gst'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">TAN&nbsp;Number&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['tan'])){
+                                    echo $seller_data[0]['tan'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                  </div>
+              </div>
+            </div>
+              <div class="col-md-6" style="padding-left: 2px;">
+            <div class="card ">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">PAN&nbsp;Number&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['pan'])){
+                                    echo $seller_data[0]['pan'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Legal&nbsp;Identity&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['Legal_Identity'])){
+                                    echo $seller_data[0]['Legal_Identity'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div> 
+            <br>                  
           <!-- Business detail End -->
 
           <!--  Bank Detail start -->
-          <div class="card mb-4">
-                  <h6 class="card-header">Bank Details</h6>
-                  <div class="card-body p-3">
-                    <div class="row no-gutters">
-                      <div class="col-md-6 col-lg-12 col-xl-6 p-1">
-                         <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Account Holder Name:</td>
-                                <td><?php if(isset($seller_data[0]['account_holder'])){
+            <h6 class="card-header alert alert-primary alert-dismissible fade show">Bank&nbsp;Details</h6>
+                      
+            <div class="row" style="margin-top:-16px">
+              <div class="col-md-6" style="padding-right: 1px;">
+              <div class="card ">
+                 <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Account&nbsp;Holder&nbsp;Name&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['account_holder'])){
                                     echo $seller_data[0]['account_holder'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>IFSC Code:</td>
-                                <td><?php if(isset($seller_data[0]['IFSC_code'])){
-                                    echo $seller_data[0]['IFSC_code'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Branch:</td>
-                                <td><?php if(isset($seller_data[0]['branch'])){
-                                    echo $seller_data[0]['branch'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Bank State:</td>
-                                <td><?php if(isset($seller_data[0]['bank_state'])){
-                                    echo $seller_data[0]['bank_state'];
-                                  } ?></td>
-                              </tr>
-                              
-                            </tbody>
-                          </table>                    
-                      </div>
-
-                      <div class="col-md-6 col-lg-12 col-xl-6 p-1" id="hr">
-                         <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Bank Account Number:</td>
-                                <td><?php if(isset($seller_data[0]['account_number'])){
-                                    echo $seller_data[0]['account_number'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Bank:</td>
-                                <td><?php if(isset($seller_data[0]['bank'])){
-                                    echo $seller_data[0]['bank'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Bank City:</td>
-                                <td><?php if(isset($seller_data[0]['bank_city'])){
-                                    echo $seller_data[0]['bank_city'];
-                                  } ?></td>
-                              </tr>
-                              
-                            </tbody>
-                          </table>
-                      </div>
-                     
+                                  } ?></label>
                     </div>
                   </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">IFSC&nbsp;Code&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['IFSC_code'])){
+                                    echo $seller_data[0]['IFSC_code'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Branch&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['branch'])){
+                                    echo $seller_data[0]['branch'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                        <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Bank&nbsp;State&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['bank_state'])){
+                                    echo $seller_data[0]['bank_state'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                  </div>
+
+                  </div>
+              </div>
+           
+              <div class="col-md-6" style="padding-left: 2px;">
+            <div class="card ">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">PAN&nbsp;Number&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['pan'])){
+                                    echo $seller_data[0]['pan'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Legal&nbsp;Identity&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['Legal_Identity'])){
+                                    echo $seller_data[0]['Legal_Identity'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            </div> 
+            <br> 
+        
             <!-- Bank Details End -->
 
             <!-- Store Detail -->
-            <div class="card mb-4">
-                  <h6 class="card-header">Store Details</h6>
-                  <div class="card-body p-3">
-                    <div class="row no-gutters">
-                      <div class="col-md-6 col-lg-6 col-xl-3 p-1">
-                         <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Display Name:</td>
-                                <td><?php if(isset($seller_data[0]['display_name'])){
+            <h6 class="card-header alert alert-primary alert-dismissible fade show">Stores&nbsp;Details</h6>
+                      
+            <div class="row" style="margin-top:-16px">
+              <div class="col-md-6" style="padding-right: 1px;">
+              <div class="card ">
+                 <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Display&nbsp;Name&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['display_name'])){
                                     echo $seller_data[0]['display_name'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Classification:</td>
-                                <td><?php if(isset($seller_data[0]['Classification'])){
-                                    echo $seller_data[0]['Classification'];
-                                  } ?></td>
-                              </tr>
-                              
-                              <tr>
-                                <td>Secondary Product:</td>
-                                <td><?php if(isset($seller_data[0]['Secondry_Product'])){
-                                    echo $seller_data[0]['Secondry_Product'];
-                                  } ?></td>
-                              </tr>
-                            </tbody>
-                          </table>                    
-                      </div>
-
-                      <div class="col-md-6 col-lg-6 col-xl-3 p-1" id="hr">
-                         <table class="table user-view-table m-0">
-                            <tbody>
-                              <tr>
-                                <td>Primary Product:</td>
-                                <td><?php if(isset($seller_data[0]['Primary_Product'])){
-                                    echo $seller_data[0]['Primary_Product'];
-                                  } ?></td>
-                              </tr>
-                              <tr>
-                                <td>Making Process:</td>
-                                <td><?php if(isset($seller_data[0]['Making_Process'])){
-                                    echo $seller_data[0]['Making_Process'];
-                                  } ?></td>
-                              </tr>
-                              
-                            </tbody>
-                          </table>
-                      </div>
-                     
+                                  } ?></label>
                     </div>
                   </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Classification&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['Classification'])){
+                                    echo $seller_data[0]['Classification'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Secondary&nbsp;Product&nbsp;:</label>
+                    <div class="col-sm-7">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['Secondry_Product'])){
+                                    echo $seller_data[0]['Secondry_Product'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                        
+                  </div>
+
+                  </div>
+              </div>
+           
+              <div class="col-md-6" style="padding-left: 2px;">
+            <div class="card ">
+                <div class="card-body">
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Primary&nbsp;Product&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['Primary_Product'])){
+                                    echo $seller_data[0]['Primary_Product'];
+                                  } ?></label>
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Making&nbsp;Process&nbsp;:</label>
+                    <div class="col-sm-8">
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['Making_Process'])){
+                                    echo $seller_data[0]['Making_Process'];
+                                  } ?></label>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            </div> 
+            <br> 
+          
             <!-- Store Details End -->
  
 
