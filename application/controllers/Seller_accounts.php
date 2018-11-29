@@ -243,11 +243,71 @@ class Seller_accounts extends CI_Controller
 
 	public function order_list()
 	{
-		$this->load->view('Seller_accounts/order_list');
+		$seller_id = $this->uri->segment(3);
+
+		$this->db->select('	cart_product.cart_product_id,
+							cart_product.product_id,
+							cart_product.Order_id,	
+							cart_product.ordered_date,
+							cart_product.order_status,
+							cart_product.seller_id,
+							products.prod_name')
+				 ->from('cart_product')
+				 ->join('products','products.prod_id=cart_product.product_id','left')
+				 ->where("cart_product.seller_id=".$seller_id." ")
+				 ->where("cart_product.Order_id!='' ")
+				 ->order_by('cart_product.cart_product_id','desc');
+
+		$data['seller_order'] = $this->db->get()->result_array();
+		// echo "<pre>"; print_r($data['seller_order']); exit();
+		$this->load->view('Seller_accounts/order_list',$data);
+	}
+
+	public function order_list_ajax()
+	{
+		// echo "<pre>"; print_r($_POST); exit();
+		$seller_id    = $this->input->post('seller_id');
+		$order_date   = $this->input->post('order_date');
+	    $order_status = $this->input->post('order_status');
+	    $search       = $this->input->post('search');
+
+	    $d='';
+	    if(!empty($order_date)){
+	    	$d .=" AND cart_product.ordered_date like '%".$order_date."%' ";
+	    }
+	    
+	    $s='';
+	    if(!empty($search)){
+	    	$s .=" AND cart_product.product_id like '%".$search."%' OR cart_product.Order_id like '%".$search."%' ";	
+	    }
+
+	    $this->db->select('	cart_product.cart_product_id,
+							cart_product.product_id,
+							cart_product.Order_id,	
+							cart_product.ordered_date,
+							cart_product.order_status,
+							products.prod_name')
+				 ->from('cart_product')
+				 ->join('products','products.prod_id=cart_product.product_id','left')
+				 ->where("cart_product.seller_id=".$seller_id." ".$d." ".$s." ")
+				 ->where("cart_product.Order_id!='' ")
+				 ->order_by('cart_product.cart_product_id','desc');
+
+		$data['seller_order'] = $this->db->get()->result_array();
+
+		// echo "<pre>"; print_r($data['seller_order']); exit();
+		$this->load->view('Seller_accounts/order_list_ajax',$data);
+
+
 	}
 
 	public function order_detail_page()
-	{
+	{	
+		$Order_id        = $this->uri->segment(3);
+		$cart_product_id = $this->uri->segment(4);
+
+		print_r($Order_id);
+		
 		$this->load->view('Seller_accounts/order_detail_page');
 	}
 }
