@@ -84,8 +84,7 @@ Select count(seller_id)  FROM products WHERE product_status= '2' GROUP BY seller
 		
 		$data['get_product_quinity']=$this->site_sentry->get_product_quinity();
 		
-		
-		
+		//$data['paymentSuccess']=$this->site_sentry->Get_orderlist();
 		
 		
 		$this->load->view('dashboard_seller',$data);
@@ -160,7 +159,7 @@ Select count(seller_id)  FROM products WHERE product_status= '2' GROUP BY seller
 		
 		$data['get_product_quinity']=$this->site_sentry->get_product_quinity();
 		
-		
+		$data['paymentSuccess']=$this->site_sentry->Get_orderlist();
 		
 		
 		

@@ -535,6 +535,35 @@ $sql=$this->db->query($query_city);
 return $sql->result_array();
 }
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ function Get_orderlist(){
+	//	$this->db->trans_begin();
+		//user Section, category, Seller, Product,cart_product//LEFT JOIN category as c ON c.cat_id=cp.cuser_id
+		$query="SELECT sm.mobile_number as sellermobile,sm.gst as sellergst,l.id,l.user_id,l.first_name,l.last_name,l.name,l.username,l.user_type,l.account_status,l.role_id,l.email,l.mobile_number,l.org_name,l.address_1,l.address_2,l.state,l.city,l.zipcode,l.gst,s.*,c.*,se.*,p.*,cp.* FROM cart_product as cp
+		LEFT JOIN login as l ON l.user_id=cp.cuser_id
+		LEFT JOIN login as sm ON sm.user_id=cp.seller_id
+		LEFT JOIN products as p ON p.id=cp.pid
+		LEFT JOIN seller as se ON se.seller_id=cp.seller_id
+		LEFT JOIN sections as s ON s.section_id=p.section_id
+		LEFT JOIN category as c ON c.cat_id=p.cat_id ORDER BY cp.payment_date DESC limit 0,1500";
+		
+		
+		$sql = $this->db->query($query);
+		/*if ($this->db->trans_status() === FALSE){
+        $this->db->trans_rollback();
+        }else{
+        $this->db->trans_commit();
+		
+		 }*/
+      return $sql->result_array();
+	}
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
