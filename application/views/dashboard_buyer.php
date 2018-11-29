@@ -422,7 +422,7 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Complain/Refund</div>
+                    <div class="card-header-title">Complain</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
@@ -447,7 +447,7 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">SubCategory Wise/S</div>
+                    <div class="card-header-title">Refund</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
