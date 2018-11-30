@@ -764,14 +764,14 @@ return "#".dechexpad($r%255).dechexpad($g%255).dechexpad($b%255);
   
  <?php //print_r($section_wise); 
   
-  /*foreach($subcategory_wise as $subcategory){
-	  $subcategory_name=$subcategory['sub_cat_name'];
-	  $Total=$subcategory['Total'];
-	  $subcategorylabel[]="'$subcategory_name'";
-	  $subcategoryTotal[]="'$Total'";
+  foreach($Get_enquiry_chart as $enquiry_chart){
+	  $enquiry_name=$enquiry_chart['product'];
+	  $enquiry_Total=$enquiry_chart['Total'];
+	  $enquiry_namelabel[]="'$enquiry_name'";
+	  $enquiry_TotalTotal[]="'$enquiry_Total'";
   }
- $subcategory_label = implode(',',$subcategorylabel);
- $subcategory_Total = implode(',',$subcategoryTotal);*/
+ $enquiry_chart_label = implode(',',$enquiry_namelabel);
+ $enquiry_chart_Total = implode(',',$enquiry_TotalTotal);
   //print_r($section_label); 
   ?>  
   
@@ -975,9 +975,9 @@ for (int i=0;i<6; i++){
     type: 'bar',
 	
     data: {
-		labels: [<?php //print_r($subcategory_label);  ?>],
+		labels: [<?php print_r($enquiry_chart_label);  ?>],
         datasets: [{
-        data: [<?php //print_r($subcategory_Total);  ?> ],
+        data: [<?php print_r($enquiry_chart_Total);  ?> ],
         borderWidth: 0,
         backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],

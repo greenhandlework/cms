@@ -161,7 +161,7 @@ Select count(seller_id)  FROM products WHERE product_status= '2' GROUP BY seller
 		
 		$data['paymentSuccess']=$this->site_sentry->Get_orderlist();
 		
-		
+		$data['Get_enquiry_chart']=$this->site_sentry->Get_enquiry_chart();
 		
 		$this->load->view('dashboard_buyer',$data);
 	}

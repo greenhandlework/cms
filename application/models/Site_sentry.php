@@ -556,7 +556,15 @@ return $sql->result_array();
 		 }*/
       return $sql->result_array();
 	}
+	
+	
+function Get_enquiry_chart(){
+	$enquiry_chart="Select product,count(product) as Total FROM bulk_order where from_type = 'enquiry' and status='1' AND product!='' or product!='0'
+group by product ORDER BY Total DESC limit 0,5";
 
+$sql=$this->db->query($enquiry_chart);
+return $sql->result_array();
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
