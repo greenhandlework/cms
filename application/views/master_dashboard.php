@@ -34,7 +34,7 @@
          <div class="container-fluid flex-grow-1 container-p-y">
 
             <!-- Head stats -->
-            <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
+            <!--<div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
                   <div class="ion ion-ios-bookmark text-twitter text-large"></div>
@@ -74,15 +74,15 @@
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
                   <!--<div class="ion ion-logo-instagram text-instagram text-large"></div>-->
-                  <div class="media-body ml-3">
+                  <!--<div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"></div>
                     <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">BAND SELLER</div>
-                  </div>
-                </div>
+                  </div>-->
+               <!-- </div>
               </div>
-            </div>
-            <div class="row" style="margin-bottom:2px;"></div>
-            <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
+            </div>->
+            <div class="row" style="margin-bottom:2px;"></div>-->
+            <!--<div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
               <div class="ion ion-ios-photos text-twitter text-large"></div>
@@ -128,10 +128,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div>-->
             <!-- / Head stats -->
 
-            <!-- Traffic chart + sources -->
+            <!-- Traffic chart + sources --> <?php /*
             <div class="card mb-4">
               <h5 class="card-header with-elements border-0 pt-3 pb-0">
                 <span class="card-header-title">
@@ -163,6 +163,7 @@
                 </div>
 
                 <!-- Sources -->
+               
                 <div class="col-md-4 col-lg-12 col-xl-4 px-4 pt-4">
                   <div class="pb-4">
                     Seller
@@ -216,9 +217,9 @@
                   </div>
                 </div>
                 <!-- / Sources -->
-
+ 
               </div>
-            </div>
+            </div> */ ?>
             <!-- / Traffic chart + sources -->
 
             <div class="row">
@@ -292,7 +293,7 @@
               </div>-->
               <div class="col-md-4">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">Secation Wise/P</div>
                     <div class="card-header-elements ml-auto">
@@ -312,12 +313,12 @@
                       <canvas id="statistics-chart-6" width="266" height="120" style="display: block; width: 266px; height: 120px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               <div class="col-md-4">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">Category Wise/P</div>
                     <div class="card-header-elements ml-auto">
@@ -337,12 +338,12 @@
                       <canvas id="statistics-chart-8" width="266" height="120" style="display: block; width: 266px; height: 120px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               <div class="col-md-4">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">SubCategory Wise/P</div>
                     <div class="card-header-elements ml-auto">
@@ -362,14 +363,14 @@
                       <canvas id="statistics-chart-7" width="298" height="144" style="display: block; width: 298px; height: 144px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               
               
               <div class="col-md-3">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">City Wise/S</div>
                     <div class="card-header-elements ml-auto">
@@ -389,12 +390,12 @@
                       <canvas id="statistics-chart-9" width="266" height="120" style="display: block; width: 266px; height: 120px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               <div class="col-md-3">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">State Wise/S</div>
                     <div class="card-header-elements ml-auto">
@@ -414,13 +415,13 @@
                       <canvas id="statistics-chart-10" width="266" height="120" style="display: block; width: 266px; height: 120px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               
               <div class="col-md-3">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">Category Wise/S</div>
                     <div class="card-header-elements ml-auto">
@@ -440,12 +441,12 @@
                       <canvas id="statistics-chart-11" width="266" height="120" style="display: block; width: 266px; height: 120px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               <div class="col-md-3">
 
-                <div class="card mb-4">
+                <!--<div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
                     <div class="card-header-title">SubCategory Wise/S</div>
                     <div class="card-header-elements ml-auto">
@@ -465,12 +466,12 @@
                       <canvas id="statistics-chart-12" width="266" height="120" style="display: block; width: 266px; height: 120px;"></canvas>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
               </div>
               <!-- / Charts -->
 
-              <div class="col-md-8 col-lg-12 col-xl-9">
+              <div class="col-md-12 col-lg-12 col-xl-12">
 
                 <!-- Popular queries -->
                 <div class="nav-tabs-top mb-4">
@@ -478,9 +479,9 @@
                     <li class="nav-item">
                       <a class="nav-link active" data-toggle="tab" href="#sale-stats">BUGS</a>
                     </li>
-                    <li class="nav-item">
+                   <!-- <li class="nav-item">
                       <a class="nav-link" data-toggle="tab" href="#latest-sales">Latest sales</a>
-                    </li>
+                    </li>-->
                   </ul>
                   <div class="tab-content">
                     <div class="tab-pane fade show active" id="sale-stats">
@@ -488,13 +489,14 @@
                                       <thead>
                                          <tr>
                                             <th class="hidden-phone">#</th>
-
+                                            <th class="hidden-phone">Date</th>
                                             <th style="width: 97px">Issue</th>
-                                            <th class="hidden-phone">Link of Issue</th>
-                                            <th class="hidden-phone">Page Name</th>
+                                            <th class="hidden-phone">Link</th>
+                                            <th class="hidden-phone">Page&nbsp;Name</th>
                                             <th class="hidden-phone">Description</th>  
                                             <th class="hidden-phone">Suggestion</th>
-                                              <th class="hidden-phone">Date</th>
+                                              <th class="hidden-phone">priority</th>
+                                               <th class="hidden-phone">Status</th>
                                               <!-- <th>Action</th> -->
                                            
                                          </tr>
@@ -504,12 +506,18 @@
                                           foreach ($tmp_bugs as $key => $value) { ?>
                                           <tr>
                                             <td><?php echo  $i++;?></td>
+                                             <td><?php echo  $value['date']?></td>
                                             <td><?php echo  $value['issue']?></td>
                                             <td><?php echo  $value['link']?></td>
                                             <td><?php echo  $value['page_name']?></td>
                                             <td><?php echo  $value['description']?></td>
                                             <td><?php echo  $value['suggestion']?></td>                                          
-                                             <td><?php echo  $value['date']?></td>
+                                            <td><?php echo  $value['suggestion']?></td>
+                                            <td><select name="" id="" class="custom-select" style="width:120px;">
+                                            <option value="Process">Process</option>
+                                            <option value="Complate">Complate</option>
+                                            <option value="Incomplate">Incomplate</option>
+                                            </select></td>
                                            
                                           </tr>  
                                          <?php }    ?>
@@ -519,66 +527,7 @@
                       <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
                     </div>
                     <div class="tab-pane fade" id="latest-sales">
-                      <table class="table card-table">
-                        <thead>
-                          <tr>
-                            <th>Product</th>
-                            <th>Qty.</th>
-                            <th>Sum.</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">PlayStation 4 1TB (Jet Black)</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$480.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Nike Men Black Liteforce III Sneakers</a>
-                            </td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">$115.1</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Wireless headphones</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$235.55</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">HERO ATHLETES BAG</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$160.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">POÄNG</a>
-                            </td>
-                            <td class="align-middle">3</td>
-                            <td class="align-middle">$477.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Apple iWatch (black)</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$399.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">WALKING 400 BLUE CAT3</a>
-                            </td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">$41.1</td>
-                          </tr>
-                        </tbody>
-                      </table>
+                      
                       <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
                     </div>
                   </div>
@@ -586,10 +535,11 @@
                 <!-- / Popular queries -->
 
               </div>
+              
               <div class="col-md-4 col-lg-12 col-xl-3">
 
                 <!-- Stats -->
-                <div class="row">
+                <!--<div class="row">
                   <div class="col-sm-4 col-md-12 col-lg-4 col-xl-12">
 
                     <div class="card mb-4">
@@ -632,10 +582,12 @@
                     </div>
 
                   </div>
-                </div>
+                </div>-->
                 <!-- / Stats -->
 
               </div>
+              
+              
             </div>
 
           </div>

@@ -64,7 +64,12 @@
               <div>Bids</div>
             </a>
           </li>
-
+<li class="sidenav-item">
+            <a href="<?= ADMIN_PATH.'Discount_Offers'?>" class="sidenav-link">
+              <i class="sidenav-icon ion ion-md-cube"></i>
+              <div>Discount & Offers</div>
+            </a>
+          </li>
 
 
         </ul>
