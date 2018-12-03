@@ -839,7 +839,7 @@ return "#".dechexpad($r%255).dechexpad($g%255).dechexpad($b%255);
   //  y = d.getFullYear();
   
   
-  var monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
+var monthNames = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"];
 
 var today = new Date();
 var d;
@@ -975,6 +975,7 @@ for (int i=0;i<6; i++){
     type: 'bar',
 	
     data: {
+		label:'Enquiry',
 		labels: [<?php print_r($enquiry_chart_label);  ?>],
         datasets: [{
         data: [<?php print_r($enquiry_chart_Total);  ?> ],
