@@ -165,7 +165,79 @@ Select count(seller_id)  FROM products WHERE product_status= '2' GROUP BY seller
 		
 		$this->load->view('dashboard_buyer',$data);
 	}
-	
+	public function Master()
+	{
+		
+		
+		/*$incomplete_s_q['table']='login';
+		$incomplete_s_q['where']="where role_id = '5' and account_status = 'No'";
+		$incomplete_s_q['and']="";
+		$incomplete_s_q['order_by']=""; 
+		$data['incomplete_seller']=$this->site_sentry->get_all_count($incomplete_s_q); */
+		
+		$query = $this->db->query("Select *,count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='NO'");
+		$data['incomplete_seller'] = $query->row();
+		
+		
+		//////////////////////////////////////////////////////////////////////////////////
+		$query = $this->db->query("Select *,count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='Yes' AND NOT EXISTS(Select * FROM products as b WHERE a.user_id =b.seller_id)");
+		$data['Registered'] = $query->row();
+        //////////////////////////////////////////////////////////////////////////////////
+		
+		//$query = $this->db->query("select DISTINCT a.user_id from login a,products b where a.user_id = b.seller_id");
+		//$query = $this->db->query("Select count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='Yes' AND EXISTS(Select * FROM products as p WHERE a.user_id =p.seller_id)");
+		$query = $this->db->query("SELECT COUNT(*) as count
+FROM (
+Select count(seller_id)  FROM products WHERE product_status= '2' GROUP BY seller_id
+) seller_id");
+
+		$data['Vendor'] = $query->row();
+        //////////////////////////////////////////////////////////////////////////////////
+		$query = $this->db->query("Select count(*) as count FROM login as a WHERE a.role_id = '5' and a.account_status='Offline'");
+		$data['offline_seller'] = $query->row();
+		//////////////////////////////////////////////////////////////////////////////////
+		
+		
+		$pending['table']='products';
+		$pending['where']="where product_status=0 and seller_id!=0";
+		$pending['and']="";
+		$pending['order_by']=""; 
+		$data['pending']=$this->site_sentry->get_all_count($pending); 
+
+		$approve['table']='products';
+		$approve['where']="where product_status=1";
+		$approve['and']="";
+		$approve['order_by']=""; 
+		$data['approve']=$this->site_sentry->get_all_count($approve); 
+
+		$live['table']='products';
+		$live['where']="where product_status=2";
+		$live['and']="";
+		$live['order_by']=""; 
+		$data['live']=$this->site_sentry->get_all_count($live); 
+
+		$offline['table']='products';
+		$offline['where']="where product_status=4";
+		$offline['and']="";
+		$offline['order_by']=""; 
+		$data['offline']=$this->site_sentry->get_all_count($offline); 
+		
+		/////////////////////////////////////////////////////////////////////////
+		$data['section_wise']=$this->site_sentry->get_section_wise();
+		$data['category_wise']=$this->site_sentry->get_category_wise();
+		$data['subcategory_wise']=$this->site_sentry->get_subcategory_wise();
+		$data['city_wise']=$this->site_sentry->get_city_wise();
+		$data['state_wise']=$this->site_sentry->get_state_wise();
+		$data['get_category_seller_wise']=$this->site_sentry->get_category_seller_wise();
+		$data['subcategoryseller_wise']=$this->site_sentry->get_subcategory_seller_wise();
+		
+		$data['get_product_quinity']=$this->site_sentry->get_product_quinity();
+		
+		$data['tmp_bugs'] = $this->db->query('SELECT * from temp_bugs order by id desc')->result_array();
+		$data['type']='temp_bugs';	
+		
+		$this->load->view('master_dashboard',$data);
+	}
 	
 	function Send_sms(){
 	
