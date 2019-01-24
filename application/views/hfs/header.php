@@ -1,4 +1,8 @@
-<?php $logsession=$this->session->userdata('logsession'); ?><nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar">
+<?php 
+  // print_r($page);exit();
+$logsession=$this->session->userdata('logsession'); ?>
+ 
+<nav class="layout-navbar navbar navbar-expand-lg align-items-lg-center bg-white container-p-x" id="layout-navbar">
 
           <!-- Brand demo (see assets/css/demo/demo.css) -->
           <a href="<?= ADMIN_PATH ?>" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
@@ -18,11 +22,10 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#layout-navbar-collapse">
             <span class="navbar-toggler-icon"></span>
           </button>
-
+          <span style="font-weight: bold;color: black"><?php  if(!empty($page) && isset($page)){echo $page;}else{} ?></span>
           <div class="navbar-collapse collapse" id="layout-navbar-collapse">
             <!-- Divider -->
             <hr class="d-lg-none w-100 my-2">
-
             
             <div class="navbar-nav align-items-lg-center ml-auto">
 

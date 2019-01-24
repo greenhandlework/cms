@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+       <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -44,14 +44,14 @@
               <form action="" method="post" id='search_form'>
               <div class="form-row">
                 <div class="col-md mb-4">
-                  <label class="form-label pb-1">Sales
-                    <span id="product-sales-slider-value" class="text-muted font-weight-normal ml-2">10 - 834</span>
+                  <label class="form-label">Date
+                  
                   </label>
-               <input type="text" id="b-m-dtp-date" class="form-control" name="order_date" placeholder="Date" data-dtp="dtp_u0u3J" >
+               <input type="text" id="b-m-dtp-date" class="form-control" name="order_date" placeholder="Date" data-dtp="dtp_u0u3J" class="order_date">
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Status</label>
-                  <select class="custom-select" name="order_status">
+                  <select class="custom-select" name="order_status" id="order_status">
                     <option value="Order">Order</option>
                     <option value="Production">Production</option>
                     <option value="Packed">Packed</option>
@@ -62,11 +62,23 @@
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Search</label>
-                  <input type="text" class="form-control" placeholder="Search" name="search">
+                  <input type="text" class="form-control" placeholder="Search" name="search" id="search">
                 </div> 
-                  <div class="col-md col-xl-2 mb-4">
-                  <label class="form-label d-none d-md-block">&nbsp;</label>
-                  <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                
+                <div class="col-md col-xl-2 mb-4">
+                  <div class="form-row">
+                    <div class="col-md md-8">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                     <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                    </div>
+                    <div class="col-md md-4">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                       <a href="javascript:(0)" onclick="clr()" class="btn btn-secondary "><i class="ion ion-md-refresh d-block" style="margin: 4px"></i></a>
+                    </div>
+                  </div>
+                  <!-- <label class="form-label d-none d-md-block">&nbsp;</label> -->
+                  <!-- <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                  <a href=""><i class="fas fa-undo-alt d-block"></i></a> -->
                 </div>
               </div>
            
@@ -76,8 +88,20 @@
             <!-- / Filters -->
 
             <div class="card">
-              <div class="card-datatable table-responsive" id="cng_tbl">
-             <table id="example" class="table table-striped table-bordered" style="width:100%">
+              <div class="sk-cube-grid sk-primary" id="loding" style="display: none;">
+                      <div class="sk-cube sk-cube1"></div>
+                      <div class="sk-cube sk-cube2"></div>
+                      <div class="sk-cube sk-cube3"></div>
+                      <div class="sk-cube sk-cube4"></div>
+                      <div class="sk-cube sk-cube5"></div>
+                      <div class="sk-cube sk-cube6"></div>
+                      <div class="sk-cube sk-cube7"></div>
+                      <div class="sk-cube sk-cube8"></div>
+                      <div class="sk-cube sk-cube9"></div>
+              </div>
+          <div class="post-list" id="postList">
+            <div class="card-datatable table-responsive" id="cng_tbl">
+             <table id="example1" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
                 <th>Product</th>
@@ -96,12 +120,16 @@
                     // $image = ADMIN_PATH.'' 
                    ?>
                    <tr >
-                   <td class="py-2 align-middle" style="min-width: 300px;"><div class="media align-items-center"><img class="ui-w-40 d-block" src="<?= ADMIN_IMAGE_PATH.'uikit/ps4.jpg'?>" alt=""><span class="media-body d-block text-dark ml-3"><?php echo $value['prod_name'] ?></span></div></td>
+                   <td class="py-2 align-middle" style="min-width: 300px;"><div class="media align-items-center"><img class="ui-w-40 d-block" src="<?= ADMIN_IMAGE_PATH.'uikit/ps4.jpg'?>" alt=""><span class="media-body d-block text-dark ml-3"><?php echo $value['prod_name'] ?><br>&nbsp;(<?php 
+                    $datetime = new DateTime($value['ordered_date']);
+                    $date = $datetime->format('d-m-Y');     
+                    echo $date; ?>) </span></div></td>
+
                     <td><?php echo str_replace('GHTRID_','',$value['Order_id']); ?></td>
                    <!--  <td><?php echo $value['ordered_date']; ?></td> -->
                     <!-- <td></td> -->
-                    <td><?php echo $value['email']; ?></td>
-                    <td><?php echo $value['mobile_number']; ?></td>
+                    <td><?php if($value['email']!=0 || !empty($value['email']) ){ echo $value['email']; } ?></td>
+                    <td><?php if($value['mobile_number']!=0 || !empty($value['mobile_number'])) { echo $value['mobile_number'];} ?></td>
                     <td><?php if($value['order_status']=='Order'){ ?>
                         <span class="badge badge-outline-success"><?php echo $value['order_status']; ?></span>
                        <?php }elseif($value['order_status']=='Production'){ ?>
@@ -126,7 +154,12 @@
               </tbody>
       
     </table></div>
-            </div>
+    <?php echo $this->ajax_pagination->create_links(); ?>
+    </div>
+    <input type="hidden" name="order_date1" id="order_date1">
+<input type="hidden" name="order_status1" id="order_status1">
+<input type="hidden" name="search1" id="search1">
+          </div>
 
           </div>
           <!-- / Content -->          
@@ -145,18 +178,58 @@
   <!-- / Layout wrapper -->
   <?php $this->load->view('hfs/footer') ?>
 
+
+<script>
+function searchFilter(page_num) {
+    // alert(page_num)
+    page_num = page_num?page_num:0;
+    // var keywords = $('#keywords').val();
+    // var sortBy = $('#sortBy').val();
+    // var order_date = $('#order_date1').val();
+    //     var order_status = $('#order_status1').val();
+    //     var search = $('#search1').val();
+
+    $.ajax({
+        type: 'POST',
+        url: '<?=ADMIN_PATH.'order_details/ajaxPaginationData/'?>'+page_num,
+        data:'page='+page_num,
+        beforeSend: function () {
+            $('.loading').show();
+        },
+        success: function (html) {
+          console.log(html);
+            $('#postList').html(html);
+            $('.loading').fadeOut("slow");
+        }
+    });
+}
+//,order_date:order_date,order_status:order_status,search:search
+// function searchFilter1(page_num) {
+// alert(page_num)
+// }
+</script>
   <script type="text/javascript">
     $(document).ready(function(){
       $('#search_btn').click(function(){
-        
+        var order_date = $('#b-m-dtp-date').val();
+        var order_status = $('#order_status').val();
+        var search = $('#search').val();
+        //alert(order_date)
+        $("#loding").css("display", "");
+        $("#postList").css("display", "none");
         $.ajax({
-          url  : "<?= ADMIN_PATH.'order_details/get' ?>",
+          url  : "<?= ADMIN_PATH.'order_details/ajaxfilter' ?>",
           data : $('#search_form').serialize(),
           type : "POST",
 
           success:function(resp){
             console.log(resp);
-             $('#cng_tbl').html(resp);
+            $("#loding").css("display", "none");
+            $("#postList").css("display", "");
+             $('#postList').html(resp);
+             $('#order_date1').val(order_date);
+             $('#order_status1').val(order_status);
+             $('#search1').val(search);
            
           }
         })
@@ -164,25 +237,19 @@
 
       
     })
-    // function get(id) {
-    //     var cart_product_id = id;
-        
-    //     $.ajax({
-    //       url  :"<?= ADMIN_PATH."index.php/welcome/order_detail"?>",
-    //       data : {cart_product_id:cart_product_id},
-    //       type :"POST",
-
-    //       success:function(resp){
-    //         console.log()
-    //       }
-
-    //     })
-    //   }
+   
 
       $(document).ready(function() {
     $('#example').DataTable();
 } );
+
+function clr(){
+  document.getElementById("search_form").reset();
+}
+
   </script>
+
+  
 </body>
 
 </html>

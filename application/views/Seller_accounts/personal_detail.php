@@ -46,7 +46,7 @@
             <div class="media align-items-center py-3 mb-3">
             
               <div class="media-body ml-4">
-                <h4 class="font-weight-bold mb-0">Seller Name Here                  
+                <h4 class="font-weight-bold mb-0"><?php if(isset($seller_data[0]['name'])){ echo $seller_data[0]['name'];  } ?>            
                 </h4>
                
               </div>
@@ -61,8 +61,8 @@
                   <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-5 text-sm-right">Seller&nbsp;Name&nbsp;:</label>
                     <div class="col-sm-7">
-                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['account_holder'])){
-                                    echo $seller_data[0]['account_holder'];
+                      <label class="col-form-label col-form-label-sm"><?php if(isset($seller_data[0]['name'])){
+                                    echo $seller_data[0]['name'];
                                   } ?></label>
                     </div>
                   </div>

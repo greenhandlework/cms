@@ -17,37 +17,44 @@
         <ul class="sidenav-inner py-1">
           <li class="sidenav-item open active">
             <a href="<?= ADMIN_PATH.'dashboard'?>" class="sidenav-link ">
-              <i class="sidenav-icon ion ion-md-speedometer"></i>
+              <i class="fas fa-tachometer-alt d-block"></i>&nbsp;&nbsp;
               <div>Dashboards</div>
             </a>
           </li>
 
           <li class="sidenav-item">
             <a href="<?= ADMIN_PATH.'order_details/order'?>" class="sidenav-link">
-              <i class="sidenav-icon ion ion-md-cube"></i>
-              <div>Order</div>
-            </a>
-          </li>
-
-          <li class="sidenav-item">
-            <a href="<?= ADMIN_PATH.'enquiry'?>" class="sidenav-link">
-              <i class="sidenav-icon ion ion-md-cube"></i>
-              <div>Enquiry</div>
+              <i class="fas fa-shopping-cart d-block"></i>&nbsp;&nbsp;
+              <div>Order&nbsp;(R)</div>
             </a>
           </li>
 
           <li class="sidenav-item">
             <a href="<?= ADMIN_PATH.'seller_accounts'?>" class="sidenav-link">
-              <i class="sidenav-icon ion ion-md-cube"></i>
-              <div>Seller Accounts</div>
+              <i class="fas fa-people-carry d-block"></i>&nbsp;&nbsp;
+              <div>Seller Accounts&nbsp;(R)</div>
             </a>
           </li>
 
+           <li class="sidenav-item">
+            <a href="<?= ADMIN_PATH.'buyer_accounts'?>" class="sidenav-link">
+              <i class="fas fa-user d-block"></i>&nbsp;&nbsp;
+              <div>Buyer Accounts&nbsp;(R)</div>
+            </a>
+          </li>
+          
 
           <li class="sidenav-item">
             <a href="<?= ADMIN_PATH.'product_catalog'?>" class="sidenav-link">
-              <i class="sidenav-icon ion ion-md-cube"></i>
-              <div>Product Catalog</div>
+              <i class="fas fa-shopping-bag d-block"></i>&nbsp;&nbsp;
+              <div>Product Catalog&nbsp;(R)</div>
+            </a>
+          </li>
+
+            <li class="sidenav-item">
+            <a href="<?= ADMIN_PATH.'enquiry'?>" class="sidenav-link">
+              <i class="fas fa-envelope d-block"></i>&nbsp;&nbsp;
+              <div>Enquiry&nbsp;(R)</div>
             </a>
           </li>
 
@@ -58,14 +65,14 @@
             </a>
           </li>
 
-           <li class="sidenav-item">
+          <!--  <li class="sidenav-item">
             <a href="<?= ADMIN_PATH.'bids'?>" class="sidenav-link">
               <i class="sidenav-icon ion ion-md-cube"></i>
               <div>Bids</div>
             </a>
-          </li>
+          </li> -->
 <li class="sidenav-item">
-            <a href="<?= ADMIN_PATH.'Discount_Offers'?>" class="sidenav-link">
+            <a href="<?= ADMIN_PATH.'Coupon'?>" class="sidenav-link">
               <i class="sidenav-icon ion ion-md-cube"></i>
               <div>Discount & Offers</div>
             </a>

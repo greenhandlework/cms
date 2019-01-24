@@ -37,94 +37,114 @@
             <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-ios-bookmark text-twitter text-large"></div>
+                  <div class=" text-twitter text-large"><i class="fas fa-box-open d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"><?php echo($Order->count);  ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Order</div>
+                    <div class="text-big font-weight-bold line-height-1"><?php echo($TotalOrder->count);  ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">TOTAL&nbsp;ORDER</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-md-chatbubbles text-google text-large"></div>
+                  <div class=" text-google text-large"><i class="fas fa-box d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"> <?php print_r($Fail_order->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Fail&nbsp;Order</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">FAIL&nbsp;ORDER</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-cube text-facebook text-large"></div>
-                  <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Inprocess->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Inprocess</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
-                <div class="media align-items-center">
-                 <div class="ion ion-ios-folder-open text-pinterest text-large"></div>
-                  <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Ondelivery->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Ondelivery</div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
-                <div class="media align-items-center">
-                  <!--<div class="ion ion-logo-instagram text-instagram text-large"></div>-->
+                  <!--<div class="ion ion-logo-instagram text-instagram text-large"></div>--><i class="fab fa-creative-commons-nc d-block"></i>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php print_r($Canceled->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Canceled</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">CANCELED&nbsp;ORDER</div>
                   </div>
                 </div>
               </div>
+              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+                <div class="media align-items-center">
+                  <div class=" text-large" style="color:#02BC77"><i class="oi oi-circle-check d-block"></i></div>
+                  <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($SuccessOrder->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">SUCCESS&nbsp;ORDER</div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+                <div class="media align-items-center">
+                 <div class=" text-facebook text-large"><i class="oi oi-aperture d-block"></i></div>
+                  <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Inprocess->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">INPROCESS&nbsp;ORDER</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+                <div class="media align-items-center">
+                 <div class=" text-pinterest text-large"><i class="fas fa-shipping-fast d-block"></i></div>
+                  <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Ondelivery->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">ON&nbsp;DELIVERY</div>
+                  </div>
+                </div>
+              </div>
+              
             </div>
             <div class="row" style="margin-bottom:2px;"></div>
             <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
-              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+            <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-              <div class="ion ion-ios-photos text-twitter text-large"></div>
+              <div class=" text-twitter text-large"><i class="fas fa-shipping-fast d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($Return->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Return</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">DELIVERD&nbsp;ORDER</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-photos text-google text-large"></div>
+              <div class=" text-twitter text-large"><i class="ion ion-md-swap d-block"></i></div>
+                  <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"><?php echo(($Return->count)); ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">RETURN&nbsp;ORDER</div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+                <div class="media align-items-center">
+                 <div class=" text-google text-large"><i class="ion ion-md-sync d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($Refund->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Refund</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">REFUND&nbsp;ORDER</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                <div class="ion ion-ios-photos text-facebook text-large"></div>
+                <div class=" text-facebook text-large"><i class="ion ion-md-text d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo($Complain->count); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Complain</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">COMPLAINS</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-ios-photos text-pinterest text-large"></div>
+                  <div class=" text-pinterest text-large"><i class="fas fa-dollar-sign d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($Bids->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Bids</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">LIVE&nbsp;BIDS</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-photos text-instagram text-large"></div>
+                 <div class=" text-instagram text-large"><i class="fas fa-phone d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($Enquiry->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Enquiry</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">LIVE&nbsp;ENQUIRY</div>
                   </div>
                 </div>
               </div>
@@ -140,16 +160,16 @@
                 <div class="card-header-elements ml-auto">
                   <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-default md-btn-flat">
-                      <input type="radio" name="btn-radio"> Month
+                      <input type="radio" name="btn-radio">1 Month
                     </label>
                     <label class="btn btn-default md-btn-flat">
-                      <input type="radio" name="btn-radio"> 6 Months
+                      <input type="radio" name="btn-radio"> 3 Months
                     </label>
                     <label class="btn btn-default md-btn-flat active">
-                      <input type="radio" name="btn-radio" checked=""> Year
+                      <input type="radio" name="btn-radio" checked="">6 Months
                     </label>
                     <label class="btn btn-default md-btn-flat">
-                      <input type="radio" name="btn-radio"> 3 Years
+                      <input type="radio" name="btn-radio"> 1 Years
                     </label>
                   </div>
                 </div>
@@ -167,18 +187,18 @@
                   <div class="pb-4">
                     Order
                     <div class="float-right small mt-1">
-                      11,963 &nbsp;&nbsp;
-                      <span class="text-muted">29.77%</span>
+                     <?php echo $SuccessOrder->count; ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $ptotal=(($SuccessOrder->count / $TotalOrder->count) * 100) ; echo number_format((float)($ptotal), 2, '.', ''); ?> %</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
                       <div class="progress-bar bg-twitter" style="width: 29.77%;"></div>
                     </div>
                   </div>
                   <div class="pb-4">
-                  Faild
+                  Failed
                     <div class="float-right small mt-1">
-                      11,963 &nbsp;&nbsp;
-                      <span class="text-muted">28.39%</span>
+                     <?php echo $Fail_order->count; ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $pftotal=(($Fail_order->count / $TotalOrder->count) * 100) ; echo number_format((float)($pftotal), 2, '.', ''); ?> %</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
                       <div class="progress-bar bg-google" style="width: 28.39%;"></div>
@@ -187,8 +207,8 @@
                   <div class="pb-4">
                    Enquiry
                     <div class="float-right small mt-1">
-                      9,965 &nbsp;&nbsp;
-                      <span class="text-muted">23.65%</span>
+                     <?php echo $Enquiry->count; ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $petotal=(($Enquiry->count / $Enquiry->count) * 100) ; echo number_format((float)($petotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
                       <div class="progress-bar bg-facebook" style="width: 23.65%;"></div>
@@ -207,8 +227,8 @@
                   <div class="pb-4">
                     Refund
                     <div class="float-right small mt-1">
-                      3,437 &nbsp;&nbsp;
-                      <span class="text-muted">8.15%</span>
+                     <?php echo $Refund->count; ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $prtotal=(($Refund->count / $TotalOrder->count) * 100) ; echo number_format((float)($prtotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
                       <div class="progress-bar bg-instagram" style="width: 8.15%;"></div>
@@ -294,15 +314,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">City Wise Order</div>
+                    <div class="card-header-title">Order by City</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="type-gadgets-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -319,16 +339,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">State wise Order</div>
+                    <div class="card-header-title">Order by State</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
-                        </div>
+                           <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->                        </div>
                       </div>
                     </div>
                   </h6>
@@ -407,15 +426,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Category Wise Order</div>
+                    <div class="card-header-title">Order by Category</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                         <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -432,15 +451,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Subcategory Wise Order</div>
+                    <div class="card-header-title">Order by Subcatagory</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -458,15 +477,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Complain</div>
+                    <div class="card-header-title">Complains</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                         <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -483,15 +502,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Refund</div>
+                    <div class="card-header-title">Refunds</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -505,22 +524,22 @@
               </div>
               <!-- / Charts -->
 
-              <div class="col-md-8 col-lg-12 col-xl-9">
+              <div class="col-md-12 col-lg-12 col-xl-12">
 
                 <!-- Popular queries -->
                 <div class="nav-tabs-top mb-4">
                   <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#Current">Current</a>
+                      <a class="nav-link active" data-toggle="tab" href="#Current">Failed Order</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#Failed">Failed</a>
+                      <a class="nav-link" data-toggle="tab" href="#Failed">Sucess Order</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#Ondeliver">Ondeliver</a>
+                      <a class="nav-link" data-toggle="tab" href="#Delivered">Complains</a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#Delivered">Delivered</a>
+                     <li class="nav-item">
+                      <a class="nav-link" data-toggle="tab" href="#Delivered">Refunds</a>
                     </li>
                   </ul>
                   <div class="tab-content">
@@ -648,9 +667,9 @@
                 <!-- / Popular queries -->
 
               </div>
-              <div class="col-md-4 col-lg-12 col-xl-3">
+              <!--<div class="col-md-4 col-lg-12 col-xl-3">
 
-                <!-- Stats -->
+              
                 <div class="row">
                   <div class="col-sm-4 col-md-12 col-lg-4 col-xl-12">
 
@@ -695,9 +714,9 @@
 
                   </div>
                 </div>
-                <!-- / Stats -->
+               
 
-              </div>
+              </div>-->
             </div>
 
           </div>
@@ -1164,7 +1183,7 @@ for (int i=0;i<6; i++){
     }
   });
 
-  $('#ex-stats').DataTable();
+  $('#ex-stats').DataTable({searching: false, paging: false, info: false});
   
   });
   </script>

@@ -34,101 +34,101 @@
          <div class="container-fluid flex-grow-1 container-p-y">
 
             <!-- Head stats -->
-            <!--<div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
+            <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-ios-bookmark text-twitter text-large"></div>
+                  <div class=" text-twitter text-large"><i class="fas fa-bug d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"><?php echo($incomplete_seller->count);  ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Seller</div>
+                    <div class="text-big font-weight-bold line-height-1"><?php echo($bugs->count);  ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">BUGS</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-md-chatbubbles text-google text-large"></div>
+                  <div class=" text-google text-large"><i class="fas fa-hourglass-end d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Registered->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Registered</div>
+                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Pending->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">PENDING&nbsp;BUGS</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-cube text-facebook text-large"></div>
+                 <div class=" text-facebook text-large"><i class="fas fa-spinner d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Vendor->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Vendor</div>
+                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($process->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">PROCESSING&nbsp;BUGS</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-folder-open text-pinterest text-large"></div>
+                 <div class=" text-pinterest text-large"><i class="fas fa-tape d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($offline_seller->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Offline</div>
+                    <div class="text-big font-weight-bold line-height-1"> <?php print_r($Complate->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">COMPLATED&nbsp;BUGS</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <!--<div class="ion ion-logo-instagram text-instagram text-large"></div>-->
-                  <!--<div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">BAND SELLER</div>
-                  </div>-->
-               <!-- </div>
+                 <div class=" text-instagram text-large"><i class="fas fa-chess-pawn d-block"></i></div>
+                 <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"><?php print_r($Reissue->count) ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">REISSUE BUGS</div>
+                  </div>
+                </div>
               </div>
-            </div>->
-            <div class="row" style="margin-bottom:2px;"></div>-->
-            <!--<div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
+            </div>
+            <div class="row" style="margin-bottom:2px;"></div>
+           <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-              <div class="ion ion-ios-photos text-twitter text-large"></div>
+              <div class=" text-twitter text-large"><i class="fas fa-archive d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"><?php echo(($pending->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Pending</div>
+                    <div class="text-big font-weight-bold line-height-1"><?php echo(($sections->count)); ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">SECTION</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-photos text-google text-large"></div>
+                 <div class=" text-google text-large"><i class="fas fa-baseball-ball d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"><?php echo(($approve->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Approved</div>
+                    <div class="text-big font-weight-bold line-height-1"><?php echo(($category->count)); ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">CATEGORY</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                <div class="ion ion-ios-photos text-facebook text-large"></div>
+                <div class=" text-facebook text-large"><i class="fab fa-bandcamp d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"><?php echo($live->count); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Live</div>
+                    <div class="text-big font-weight-bold line-height-1"><?php echo($subcategory->count); ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">SUBCATEGORY</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-ios-photos text-pinterest text-large"></div>
+                  <div class=" text-pinterest text-large"><i class="fab fa-product-hunt d-block"></i></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"><?php echo(($offline->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Offline</div>
+                    <div class="text-big font-weight-bold line-height-1"><?php echo(($products->count)); ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">PRODUCT</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-photos text-instagram text-large"></div>
+                 <div class=" text-instagram text-large"><i class="fas fa-images d-block"></i></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1">8,636</div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">REMOVE</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">IMAGES</div>
                   </div>
                 </div>
               </div>
-            </div>-->
+            </div>
             <!-- / Head stats -->
 
             <!-- Traffic chart + sources --> <?php /*
@@ -489,7 +489,7 @@
                                       <thead>
                                          <tr>
                                             <th class="hidden-phone">#</th>
-                                            <th class="hidden-phone">Date</th>
+                                            <th class="hidden-phone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                             <th style="width: 97px">Issue</th>
                                             <th class="hidden-phone">Link</th>
                                             <th class="hidden-phone">Page&nbsp;Name</th>
@@ -506,13 +506,15 @@
                                           foreach ($tmp_bugs as $key => $value) { ?>
                                           <tr>
                                             <td><?php echo  $i++;?></td>
-                                             <td><?php echo  $value['date']?></td>
-                                            <td><?php echo  $value['issue']?></td>
-                                            <td><?php echo  $value['link']?></td>
-                                            <td><?php echo  $value['page_name']?></td>
-                                            <td><?php echo  $value['description']?></td>
-                                            <td><?php echo  $value['suggestion']?></td>                                          
-                                            <td><?php echo  $value['suggestion']?></td>
+                                             <td><?php   $value['date']; $dt = new DateTime($value['date']);
+
+echo $dt->format('d-m-Y');?></td>
+                                            <td><?php echo  $value['issue'];?></td>
+                                            <td><?php echo  $value['link'];?></td>
+                                            <td><?php echo  $value['page_name'];?></td>
+                                            <td><?php echo  $value['description'];?></td>
+                                            <td><?php echo  $value['suggestion'];?></td>                                          
+                                            <td><?php echo  $value['suggestion'];?></td>
                                             <td><select name="" id="" class="custom-select" style="width:120px;">
                                             <option value="Process">Process</option>
                                             <option value="Complate">Complate</option>
@@ -607,20 +609,20 @@
   
   <?php //print_r($section_wise); 
   
-  foreach($section_wise as $section){
+  /*foreach($section_wise as $section){
 	  $section_name=$section['section_name'];
 	  $Total=$section['Total'];
 	  $sectionlabel[]="'$section_name'";
 	  $sectionTotal[]="'$Total'";
   }
  $section_label = implode(',',$sectionlabel);
- $section_Total = implode(',',$sectionTotal);
+ $section_Total = implode(',',$sectionTotal);*/
   //print_r($section_label); 
   ?>
   
    <?php //print_r($section_wise);
    
-    function dechexpad($i){
+    /*function dechexpad($i){
 $s="";
 if($i<16) $s="0";
 $s.=dechex($i);
@@ -630,10 +632,10 @@ function hexcolor($r,$g,$b){
 return "#".dechexpad($r%255).dechexpad($g%255).dechexpad($b%255);
 }
   $i="6";
-  $j="12";
+  $j="12";*/
  // $g="170";
  // $b="320";
-  foreach($category_wise as $category){
+  /*foreach($category_wise as $category){
 	  $category_name=$category['cat_name'];
 	  $Total=$category['Total'];
 	  $categorylabel[]="'$category_name'";
@@ -649,71 +651,71 @@ return "#".dechexpad($r%255).dechexpad($g%255).dechexpad($b%255);
  $category_label = implode(',',$categorylabel);
  $category_Total = implode(',',$categoryTotal);
  $category_color = implode(',',$categorycolor);
-  print_r($category_color); 
+  print_r($category_color); */
   ?>
   
  <?php //print_r($section_wise); 
   
-  foreach($subcategory_wise as $subcategory){
+/*  foreach($subcategory_wise as $subcategory){
 	  $subcategory_name=$subcategory['sub_cat_name'];
 	  $Total=$subcategory['Total'];
 	  $subcategorylabel[]="'$subcategory_name'";
 	  $subcategoryTotal[]="'$Total'";
   }
  $subcategory_label = implode(',',$subcategorylabel);
- $subcategory_Total = implode(',',$subcategoryTotal);
+ $subcategory_Total = implode(',',$subcategoryTotal);*/
   //print_r($section_label); 
   ?>  
   
    <?php //print_r($section_wise); 
   
-  foreach($city_wise as $city){
+ /* foreach($city_wise as $city){
 	  $city_name=$city['city'];
 	  $Totalc=$city['Total'];
 	  $citylabel[]="'$city_name'";
 	  $cityTotal[]="'$Totalc'";
   }
  $city_label = implode(',',$citylabel);
- $city_Total = implode(',',$cityTotal);
+ $city_Total = implode(',',$cityTotal);*/
   //print_r($section_label); 
   ?>  
   
   <?php //print_r($section_wise); 
   
-  foreach($state_wise as $state){
+  /*foreach($state_wise as $state){
 	  $state_name=$state['state'];
 	  $Totalc=$state['Total'];
 	  $statelabel[]="'$state_name'";
 	  $stateTotal[]="'$Totalc'";
   }
  $state_label = implode(',',$statelabel);
- $state_Total = implode(',',$stateTotal);
+ $state_Total = implode(',',$stateTotal);*/
   //print_r($section_label); 
   ?>  
   
    <?php //print_r($section_wise); 
   
-  foreach($get_category_seller_wise as $category_seller){
+ /* foreach($get_category_seller_wise as $category_seller){
 	  $scat_name=$category_seller['cat_name'];
 	  $Totalc=$category_seller['Total'];
 	  $category_sellerlabel[]="'$scat_name'";
 	  $category_sellerTotal[]="'$Totalc'";
   }
  $category_s_label = implode(',',$category_sellerlabel);
- $category_s_Total = implode(',',$category_sellerTotal);
+ $category_s_Total = implode(',',$category_sellerTotal);*/
   //print_r($section_label); 
   ?>  
   
   <?php //print_r($section_wise); 
   
-  foreach($subcategoryseller_wise as $subcategoryseller_seller){
+ /* foreach($subcategoryseller_wise as $subcategoryseller_seller){
 	  $subcategorys_name=$subcategoryseller_seller['sub_cat_name'];
 	  $subcategorys_Total=$subcategoryseller_seller['Total'];
 	  $subcategorys_sellerlabel[]="'$subcategorys_name'";
 	  $subcategorys_sellerTotal[]="'$subcategorys_Total'";
   }
  $subcategorys_s_label = implode(',',$subcategorys_sellerlabel);
- $subcategorys_s_Total = implode(',',$subcategorys_sellerTotal);
+ $subcategorys_s_Total = implode(',',$subcategorys_sellerTotal);*/
   //print_r($section_label); 
   ?>  
   <!-- / Layout wrapper -->
@@ -799,9 +801,9 @@ for (int i=0;i<6; i++){
   var chart6 = new Chart(document.getElementById('statistics-chart-6').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [<?php print_r($section_label); ?>],
+      labels: [<?php //print_r($section_label); ?>],
       datasets: [{
-        data: [<?php print_r($section_Total); ?>],
+        data: [<?php //print_r($section_Total); ?>],
         backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],
         borderWidth: 1
@@ -832,9 +834,9 @@ for (int i=0;i<6; i++){
   var chart8 = new Chart(document.getElementById('statistics-chart-8').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [<?php print_r($category_label); ?>],
+      labels: [<?php //print_r($category_label); ?>],
       datasets: [{
-        data: [<?php print_r($category_Total); ?>],
+        data: [<?php //print_r($category_Total); ?>],
        backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#edfd5e'],
         borderWidth: 1
@@ -865,9 +867,9 @@ for (int i=0;i<6; i++){
     type: 'bar',
 	
     data: {
-		labels: [<?php print_r($subcategory_label);  ?>],
+		labels: [<?php //print_r($subcategory_label);  ?>],
         datasets: [{
-        data: [<?php print_r($subcategory_Total);  ?> ],
+        data: [<?php //print_r($subcategory_Total);  ?> ],
         borderWidth: 0,
         backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],
@@ -897,9 +899,9 @@ for (int i=0;i<6; i++){
  var chart9 = new Chart(document.getElementById('statistics-chart-9').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [<?php print_r($city_label); ?>],
+      labels: [<?php //print_r($city_label); ?>],
       datasets: [{
-        data: [<?php print_r($city_Total); ?>],
+        data: [<?php //print_r($city_Total); ?>],
        backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],
         borderWidth: 1
@@ -929,9 +931,9 @@ for (int i=0;i<6; i++){
   var chart10 = new Chart(document.getElementById('statistics-chart-10').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [<?php print_r($state_label); ?>],
+      labels: [<?php //print_r($state_label); ?>],
       datasets: [{
-        data: [<?php print_r($state_Total); ?>],
+        data: [<?php //print_r($state_Total); ?>],
         backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],
         borderWidth: 1
@@ -962,9 +964,9 @@ for (int i=0;i<6; i++){
    var chart11 = new Chart(document.getElementById('statistics-chart-11').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [<?php print_r($category_s_label); ?>],
+      labels: [<?php //print_r($category_s_label); ?>],
       datasets: [{
-        data: [<?php print_r($category_s_Total); ?>],
+        data: [<?php //print_r($category_s_Total); ?>],
         backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],
         borderWidth: 1
@@ -994,9 +996,9 @@ for (int i=0;i<6; i++){
   var chart12 = new Chart(document.getElementById('statistics-chart-12').getContext("2d"), {
     type: 'pie',
     data: {
-      labels: [<?php print_r($subcategorys_s_label); ?>],
+      labels: [<?php //print_r($subcategorys_s_label); ?>],
       datasets: [{
-        data: [<?php print_r($subcategorys_s_Total); ?>],
+        data: [<?php //print_r($subcategorys_s_Total); ?>],
         backgroundColor: ['rgba(99,125,138,0.5)', 'rgba(28,151,244,0.5)', 'rgba(2,188,119,0.5)','rgba(99,425,338,0.5)','#ffd900'],
         borderColor: ['#647c8a', '#2196f3', '#02bc77', '#23bc77','#ffd900'],
         borderWidth: 1

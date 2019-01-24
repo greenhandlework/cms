@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+         <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -44,12 +44,12 @@
               <form action="" method="post" id='search_form'>
               <div class="form-row">
                 <div class="col-md mb-4">
-                  <label class="form-label pb-1">Activation Date  </label>
+                  <label class="form-label ">Activation Date  </label>
                   <input type="text" id="b-m-dtp-date" class="form-control" name="activation_date" placeholder="Date" data-dtp="dtp_dXxc9">
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Status</label>
-                  <select class="custom-select" name="seller_status">
+                  <select class="custom-select" name="seller_status" id="seller_status">
                     <option value="seller">Seller</option>
                     <option value="registered_seller">Registered&nbsp;Seller</option>
                     <option value="vendor">Vendor</option>
@@ -58,11 +58,19 @@
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Search</label>
-                  <input type="text" class="form-control" placeholder="Search" name="search_seller">
+                  <input type="text" class="form-control" placeholder="Search" name="search_seller" id="search_seller">
                 </div> 
                   <div class="col-md col-xl-2 mb-4">
-                  <label class="form-label d-none d-md-block">&nbsp;</label>
-                  <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                 <div class="form-row">
+                    <div class="col-md md-8">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                     <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                    </div>
+                    <div class="col-md md-4">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                       <a href="javascript:void(0)" onclick="clr()" class="btn btn-secondary "><i class="ion ion-md-refresh d-block" style="margin: 4px"></i></a>
+                    </div>
+                  </div>
                 </div>
               </div>
            
@@ -72,17 +80,18 @@
             <!-- / Filters -->
 
             <div class="card">
+          <div class="post-list" id="postList">
               <div class="card-datatable table-responsive" id="cng_ajax">
-            <table id="seller_1" class="table table-hover table-bordered" style="width:100%">
+            <table id="seller_11" class="table table-hover table-bordered" style="width:100%">
                        <thead>
                             <tr>
                                 <th>#</th>
-                                <th >Business&nbsp;Name</th>
-                                <th>Seller&nbsp;Name</th>
+                                <!-- <th >Business&nbsp;Name</th> -->
+                                <th>Seller&nbsp;Details</th>
                                 <th>Seller&nbsp;Id</th>
                                 <th>Mobile&nbsp;Number</th>                                  
                                 <th>Email&nbsp; Id</th>                                
-                                <th>Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <th>Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                                
                              </tr>
                         </thead>
@@ -95,14 +104,14 @@
                               ?>
                                 <tr>
                                   <td><?php echo $i++; ?></td>
-                                  <td><?php echo $value['org_name'] ?></td>
-                                  <td><?php echo $value['name'] ?></td>
+                                  <td><?php echo $value['org_name']; ?><br><?php echo $value['name'] ?></td>
+                                  <!-- <td></td> -->
                                   <td><?php echo $value['user_id'] ?></td>
                                   <td><?php echo $value['mobile_number'] ?></td>
-                                  <td><?php echo $value['email'] ?></td>
-                                  <td><a href="<?php echo $bulk_id_pro; ?>" class="badge badge-success" title="" data-original-title="View"><i class="fab fa-readme d-block"></i></a>&nbsp;|&nbsp;<a href="#" onclick="delete_seller1('<?= ADMIN_PATH.'seller_accounts/delete_seller/' ?><?php echo $value['user_id'] ?>')" class="badge badge-danger" ><i class="fas fa-minus-circle d-block"></i></a>
+                                  <td><?php echo $value['email'] ?></td>                           
+                                  <td><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-xs btn-outline-success" >View</a>&nbsp;|&nbsp;<a href="<?= ADMIN_PATH.'seller_accounts/delete_seller/' ?><?php echo $value['user_id'] ?>" onclick="return confirm('Are you sure ?');" class="btn btn-xs btn-outline-danger" ><i class="ion ion-ios-close d-block"></i></a>
 
-                              </td>
+                                  </td>
                                 </tr>
                           <?php   } ?>
                              
@@ -110,6 +119,8 @@
                       
                     </table>
   </div>
+    <?php echo $this->ajax_pagination->create_links(); ?>
+    </div>
             </div>
 
           </div>
@@ -129,18 +140,40 @@
   <!-- / Layout wrapper -->
   <?php $this->load->view('hfs/footer') ?>
 
+<script>
+function searchFilter(page_num) {
+    // alert(page_num)
+    page_num = page_num?page_num:0;
+   
+    $.ajax({
+        type: 'POST',
+        url: '<?=ADMIN_PATH.'seller_accounts/ajaxPaginationData/'?>'+page_num,
+        data:'page='+page_num,
+        beforeSend: function () {
+            $('.loading').show();
+        },
+        success: function (html) {
+          console.log(html);
+            $('#postList').html(html);
+            $('.loading').fadeOut("slow");
+        }
+    });
+}
+
+</script>
+
   <script type="text/javascript">
     $(document).ready(function(){
       $('#search_btn').click(function(){
-        
+              
         $.ajax({
-          url  : "<?= ADMIN_PATH.'seller_accounts/get' ?>",
+          url  : "<?= ADMIN_PATH.'seller_accounts/ajaxfilter' ?>",
           data : $('#search_form').serialize(),
           type : "POST",
 
           success:function(resp){
             console.log(resp);
-            $('#cng_ajax').html(resp);
+            $('#postList').html(resp);
           }
         })
       });
@@ -162,9 +195,13 @@
     //     })
     //   }
 
-      $(document).ready(function() {
+$(document).ready(function() {
     $('#seller_1').DataTable();
-} );
+});
+
+function clr(){
+  document.getElementById("search_form").reset();
+}
   </script>
 </body>
 

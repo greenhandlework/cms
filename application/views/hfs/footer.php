@@ -31,3 +31,5 @@
 <script src="<?= ADMIN_VENDOR_PATH.'libs/flow-js/flow.js'?>"></script>
 
  <script src="<?= ADMIN_JS_PATH.'forms_pickers.js'?>"></script>
+
+   <script src="<?= ADMIN_VENDOR_PATH.'libs/bootstrap-sweetalert/bootstrap-sweetalert.js'?>"></script>

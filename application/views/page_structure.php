@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+       <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->

@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+        <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -34,14 +34,14 @@
          <div class="container-fluid flex-grow-1 container-p-y">
 
          
-            <div class="media align-items-center py-3 mb-3">
+          <!--   <div class="media align-items-center py-3 mb-3">
             
               <div class="media-body ml-4">
                 <h4 class="font-weight-bold mb-0">Product List                  
                 </h4>
                
               </div>
-            </div>
+            </div> -->
 
             <!-- Filters -->
             <div class="ui-bordered px-4 pt-4 mb-4">

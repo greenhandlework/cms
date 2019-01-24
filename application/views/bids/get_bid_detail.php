@@ -40,27 +40,30 @@
               <div class="card-body">
                 <form>
                   <div class="form-group row">
-                    <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Color :</label>
+                    <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Product Name :</label>
                     <div class="col-sm-8">
-                       <label class="col-form-label col-form-label-sm ">Red</label>
+                       <label class="col-form-label col-form-label-sm "><?php echo  $get_bid[0]['product_name']; ?></label>
                       <!-- <input type="text" class="form-control form-control-sm" placeholder="Small input"> -->
                     </div>
-                  </div>
+                 
 
-                  <div class="form-group row">
-                    <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Handle Color</label>
+                 
+                    <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Quantity :</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control form-control-sm" placeholder="Small input" value="Blue">
+                     <label class="col-form-label col-form-label-sm "><?php echo  $get_bid[0]['quantity']; ?></label>
                     </div>
-                  </div>
+                  
+                    <hr>
+                      
+                 <?php
+                    foreach ($get_bid as $key => $value) { ?>
+                          <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right"><?php echo $value['label'] ?>&nbsp;:</label>
+                          <div class="col-sm-8">
+                            <label class="col-form-label col-form-label-sm "><?php echo  $value['value']; ?></label>                         
+                          </div>
+                 <?php  }  ?>
 
-                  <div class="form-group row">
-                    <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Size</label>
-                    <div class="col-sm-8">
-                      <input type="text" readonly="" class="form-control form-control-sm" placeholder="Small input" value="10*10">
-                    </div>
-                  </div>
-
+                   </div> <!-- form-group row -->
                   <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Product Image</label>
                     <div class="col-sm-8">
@@ -77,8 +80,8 @@
                                       <div id="product-item-images" class="row">
 
                                         <div class="col-12 col-sm-6 col-md-4 col-xl-3 mb-4">
-                                          <a href="<?= ADMIN_PATH.'upload/seller_document/demo_image.jpg' ?>" class="d-block border-primary ">
-                                            <img src="<?= ADMIN_PATH.'upload/seller_document/demo_image.jpg' ?>" class="img-fluid." alt="" height='50px' width='50px'>
+                                          <a href="<?= ADMIN_PATH.'upload/bids_image/' ?><?php echo $value['image'] ?>" class="d-block border-primary ">
+                                            <img src="<?= ADMIN_PATH.'upload/bids_image/'?><?php echo $value['image'] ?>" class="img-fluid." alt="" height='100px' width='100px'>
                                           </a>
                                         </div>
                                       </div>  
@@ -102,7 +105,7 @@
                   <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">No.&nbsp;Bids :</label>
                     <div class="col-sm-8">
-                       <label class="col-form-label col-form-label-sm ">10</label>
+                       <label class="col-form-label col-form-label-sm "><?php echo $get_bid1[0]['cnt']; ?></label>
                       <!-- <input type="text" class="form-control form-control-sm" placeholder="Small input"> -->
                     </div>
                   </div>
@@ -110,28 +113,28 @@
                   <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Average&nbsp; Price</label>
                     <div class="col-sm-8">
-                      <input type="text" class="form-control form-control-sm" placeholder="Small input" value="15">
+                        <label class="col-form-label col-form-label-sm "><?php echo $get_bid1[0]['avg_price']; ?></label>
                     </div>
                   </div>
 
                   <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Lowest&nbsp;Price</label>
                     <div class="col-sm-8">
-                      <input type="text" readonly="" class="form-control form-control-sm" placeholder="Small input" value="10">
+                      <label class="col-form-label col-form-label-sm "><?php echo $get_bid1[0]['min_price']; ?></label>
                     </div>
                   </div>
 
                    <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Average&nbsp;Duration</label>
                     <div class="col-sm-8">
-                      <input type="text" readonly="" class="form-control form-control-sm" placeholder="Small input" value="10 Days">
+                     <label class="col-form-label col-form-label-sm "><?php echo $get_bid1[0]['avg_duration']; ?></label>
                     </div>
                   </div>
 
                    <div class="form-group row">
                     <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Lowest&nbsp;Duration</label>
                     <div class="col-sm-8">
-                      <input type="text" readonly="" class="form-control form-control-sm" placeholder="Small input" value="5 Days">
+                      <label class="col-form-label col-form-label-sm "><?php echo $get_bid1[0]['min_duration']; ?></label>
                     </div>
                   </div>
 
@@ -159,36 +162,23 @@
                         </tr>
                     </thead>
                      <tbody id="tc">
-                      <td>1</td>
-                      <td>Prasanna PaTil.</td>
-                      <td>15</td>
-                      <td>5 Days</td>
-                      <td>14-11-2018</td>
-                      <td>
-                        <a class="btn btn-xs btn-success" href="javascript:(0)" onclick="alert('Order Placed')">Place Order</a>
-                        <!-- <a href="#" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a> -->
-                      </td>
-                      <!--  <?php $i=1;
-                            foreach ($enq as $key => $value) { 
-                              $data = $this->db->query("SELECT count(bulk_id) as cnt from bulk_order_seller where price!='' and bulk_id=".$value['bulk_id']." ")->result_array();
 
-                                $bulk_id_pro = base_url().'enquiry/bulk_order_detail/'.$value['bulk_id'];
-                               $datetime = new DateTime($value['date']);
-                               $date = $datetime->format('Y-m-d');
-                             ?>
-                         <tr>
-                           <td><?php echo $i++; ?></td>
-                           <td><?php echo $value['name'] ?></td>
-                           <td><?php echo $value['email'] ?></td>
-                           <td><?php echo $value['mobile'] ?></td>
-                           <td><?php echo $value['product'] ?></td>
-                           <td><?php echo $value['quantity'] ?></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="<?php echo $bulk_id_pro; ?> "> <?php if(!empty($data[0]['cnt']) && $data[0]['cnt']!=0) { ?> <span class="badge badge-outline-success"><?php echo $data[0]['cnt'];?></span> <?php }else{} ?> </a></td> 
-                            <td><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a>&nbsp;|&nbsp;<a href="#  " class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="fas fa-ban d-block" style="color: red;"></i></a>
-
-                              </td>
-                         </tr>
-                       <?php } ?>   -->              
+                      <?php $i=1;
+                        foreach ($seller_det as $key => $value) {
+                             $datetime = new DateTime($value['date']);
+                            $date = $datetime->format('d-m-Y');
+                          ?>
+                          <tr>
+                            <td><?php echo $i++; ?></td>
+                            <td><?php echo $value['name']; ?></td>
+                            <td><?php echo $value['price']; ?></td>
+                            <td><?php echo $value['delivery_days']; ?></td>
+                            <td><?php echo $date; ?></td>
+                            <td> <a class="btn btn-xs btn-success" href="javascript:(0)" onclick="alert('Order Placed')">Place Order</a></td>
+                          </tr>
+                      <?php  } ?>
+                     
+                           
                          
                       </tbody>
                   

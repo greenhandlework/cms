@@ -6,7 +6,7 @@
                   <th>Product&nbsp;Id</th>
                   <!-- <th>Image</th> -->
                   <th>Status</th>
-                  <th>View</th>
+                  
             </tr>
         </thead>
          <tbody id="tc">
@@ -27,7 +27,7 @@
 
                   </td>
                   
-                  <td></td>
+                 
 
               </tr>     
             <?php } ?>    

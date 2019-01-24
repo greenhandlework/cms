@@ -35,93 +35,112 @@
 
             <!-- Head stats -->
             <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
+            <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+                <div class="media align-items-center">
+                  <div class="ion ion-ios-keypad d-block text-twitter text-large"></div>
+                  <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"><?php echo($Totalseller->count);  ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">TOTAL&nbsp;SELLER</div>
+                  </div>
+                </div>
+              </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-ios-bookmark text-twitter text-large"></div>
+                  <div class="oi oi-people d-block text-twitter text-large"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo($incomplete_seller->count);  ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Seller</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">SELLER</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-md-chatbubbles text-google text-large"></div>
+                  <div class="ion ion-md-person-add d-block text-large"  style="color:##8897AA"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"> <?php print_r($Registered->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Registered</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">REGISTERED</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-cube text-facebook text-large"></div>
+                 <div class="fas fa-baseball-ball d-block text-facebook text-large"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"> <?php print_r($Vendor->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Vendor</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">VENDOR</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-folder-open text-pinterest text-large"></div>
+                 <div class="ion ion-md-radio-button-on d-block text-pinterest text-large"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"> <?php print_r($offline_seller->count) ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Offline</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">OFFLINE</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <!--<div class="ion ion-logo-instagram text-instagram text-large"></div>-->
+                  <div class="ion ion-ios-radio-button-on d-block text-instagram text-large"></div>
                   <div class="media-body ml-3">
-                    <div class="text-big font-weight-bold line-height-1"></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">BAND SELLER</div>
+                    <div class="text-big font-weight-bold line-height-1">0</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">BAN&nbsp;SELLER</div>
                   </div>
                 </div>
               </div>
             </div>
             <div class="row" style="margin-bottom:2px;"></div>
             <div class="row no-gutters bg-lighter bg-white container-p-x pb-3 container-m--x container-m--y mb-4">
+            
+            <div class="col-6 col-sm-3 col-md pt-3 pr-4">
+                <div class="media align-items-center">
+              <div class="ion ion-md-keypad d-block text-twitter text-large"></div>
+                  <div class="media-body ml-3">
+                    <div class="text-big font-weight-bold line-height-1"><?php echo(($TotalProduct->count)); ?></div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">TOTAL&nbsp;PRODUCT</div>
+                  </div>
+                </div>
+              </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-              <div class="ion ion-ios-photos text-twitter text-large"></div>
+              <div class="oi oi-contrast d-block  text-large" style="color:#8897AA"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($pending->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Pending</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">PENDING</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-photos text-google text-large"></div>
+                 <div class="ion ion-ios-thumbs-up d-block  text-large" style="color:#02BC77"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($approve->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Approved</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">APPROVED</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                <div class="ion ion-ios-photos text-facebook text-large"></div>
+                <div class="ion ion-ios-disc d-block text-facebook text-large"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo($live->count); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Live</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">LIVE</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                  <div class="ion ion-ios-photos text-pinterest text-large"></div>
+                  <div class="ion ion-md-thumbs-down d-block text-pinterest text-large"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1"><?php echo(($offline->count)); ?></div>
-                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">Offline</div>
+                    <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">OFFLINE</div>
                   </div>
                 </div>
               </div>
               <div class="col-6 col-sm-3 col-md pt-3 pr-4">
                 <div class="media align-items-center">
-                 <div class="ion ion-ios-photos text-instagram text-large"></div>
+                 <div class="ion ion-ios-information-circle-outline d-block text-instagram text-large"></div>
                   <div class="media-body ml-3">
                     <div class="text-big font-weight-bold line-height-1">8,636</div>
                     <div class="text-light text-tiny font-weight-semibold line-height-1 mt-1">REMOVE</div>
@@ -140,16 +159,16 @@
                 <div class="card-header-elements ml-auto">
                   <div class="btn-group btn-group-sm btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-default md-btn-flat">
-                      <input type="radio" name="btn-radio"> Month
+                      <input type="radio" name="btn-radio">1 Month
                     </label>
                     <label class="btn btn-default md-btn-flat">
-                      <input type="radio" name="btn-radio"> 6 Months
+                      <input type="radio" name="btn-radio">3 Months
                     </label>
                     <label class="btn btn-default md-btn-flat active">
-                      <input type="radio" name="btn-radio" checked=""> Year
+                      <input type="radio" name="btn-radio" checked="">6 Months
                     </label>
                     <label class="btn btn-default md-btn-flat">
-                      <input type="radio" name="btn-radio"> 3 Years
+                      <input type="radio" name="btn-radio"> 1 Years
                     </label>
                   </div>
                 </div>
@@ -158,7 +177,7 @@
               <div class="row no-gutters row-bordered row-border-light">
                 <div class="d-flex col-md-8 col-lg-12 col-xl-8 align-items-center p-4">
                   <div class="w-100" style="height: 230px;">
-                    <canvas id="statistics-chart-1" width="583" height="230" style="display: block; width: 583px; height: 230px;"></canvas>
+                    <canvas id="statistics-chart-1" width="650" height="230" style="display: block; width: 650px; height: 230px;"></canvas>
                   </div>
                 </div>
 
@@ -167,51 +186,51 @@
                   <div class="pb-4">
                     Seller
                     <div class="float-right small mt-1">
-                      11,963 &nbsp;&nbsp;
-                      <span class="text-muted">29.77%</span>
+                      <?php echo($incomplete_seller->count);  ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $pitotal=(($incomplete_seller->count / $Totalseller->count) * 100) ; echo number_format((float)($pitotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
-                      <div class="progress-bar bg-twitter" style="width: 29.77%;"></div>
+                      <div class="progress-bar bg-twitter" style="width: <?php echo number_format((float)($pitotal), 2, '.', ''); ?>%;"></div>
                     </div>
                   </div>
                   <div class="pb-4">
                    Register Seller
                     <div class="float-right small mt-1">
-                      11,963 &nbsp;&nbsp;
-                      <span class="text-muted">28.39%</span>
+                      <?php print_r($Registered->count); ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $pftotal=(($Registered->count / $Totalseller->count) * 100) ; echo number_format((float)($pftotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
-                      <div class="progress-bar bg-google" style="width: 28.39%;"></div>
+                      <div class="progress-bar bg-google" style="width: <?php echo number_format((float)($pftotal), 2, '.', ''); ?>%;"></div>
                     </div>
                   </div>
                   <div class="pb-4">
                    Vendor
                     <div class="float-right small mt-1">
-                      9,965 &nbsp;&nbsp;
-                      <span class="text-muted">23.65%</span>
+                     <?php print_r($Vendor->count);?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $pvtotal=(($Vendor->count / $Totalseller->count) * 100) ; echo number_format((float)($pvtotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
-                      <div class="progress-bar bg-facebook" style="width: 23.65%;"></div>
+                      <div class="progress-bar bg-facebook" style="width: <?php echo number_format((float)($pvtotal), 2, '.', ''); ?>%;"></div>
                     </div>
                   </div>
                   <div class="pb-4">
                     Apporve product
                     <div class="float-right small mt-1">
-                      4,223 &nbsp;&nbsp;
-                      <span class="text-muted">10.02%</span>
+                      <?php echo(($approve->count)); ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $paptotal=(($approve->count / $TotalProduct->count) * 100) ; echo number_format((float)($paptotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
-                      <div class="progress-bar bg-pinterest" style="width: 10.02%;"></div>
+                      <div class="progress-bar bg-pinterest" style="width: <?php echo number_format((float)($paptotal), 2, '.', ''); ?>%;"></div>
                     </div>
                   </div>
                   <div class="pb-4">
                     Live product
                     <div class="float-right small mt-1">
-                      3,437 &nbsp;&nbsp;
-                      <span class="text-muted">8.15%</span>
+                      <?php echo($live->count); ?> &nbsp;&nbsp;
+                      <span class="text-muted"><?php $pltotal=(($live->count / $TotalProduct->count) * 100) ; echo number_format((float)($pltotal), 2, '.', ''); ?>%</span>
                     </div>
                     <div class="progress mt-1" style="height:3px;">
-                      <div class="progress-bar bg-instagram" style="width: 8.15%;"></div>
+                      <div class="progress-bar bg-instagram" style="width: <?php echo number_format((float)($pltotal), 2, '.', ''); ?>%;"></div>
                     </div>
                   </div>
                 </div>
@@ -294,15 +313,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Secation Wise/P</div>
+                    <div class="card-header-title">Product by Section</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="type-gadgets-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                         <!-- <a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -319,15 +338,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Category Wise/P</div>
+                    <div class="card-header-title">Product by Catagory</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                        <!--  <a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -344,15 +363,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">SubCategory Wise/P</div>
+                    <div class="card-header-title">Product by Subcatagory</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="new-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                        <!--  <a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -371,15 +390,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">City Wise/S</div>
+                    <div class="card-header-title">Vender by City</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -396,15 +415,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">State Wise/S</div>
+                    <div class="card-header-title">Vender by State</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                         <!-- <a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -422,15 +441,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">Category Wise/S</div>
+                    <div class="card-header-title">Vendor by Category</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                          <!--<a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -447,15 +466,15 @@
 
                 <div class="card mb-4">
                   <h6 class="card-header with-elements border-0 pr-0 pb-0">
-                    <div class="card-header-title">SubCategory Wise/S</div>
+                    <div class="card-header-title">Vendor by Subcategory</div>
                     <div class="card-header-elements ml-auto">
                       <div class="btn-group mr-3">
                         <button type="button" class="btn btn-sm btn-default icon-btn borderless btn-round md-btn-flat dropdown-toggle hide-arrow" data-toggle="dropdown">
                           <i class="ion ion-ios-more"></i>
                         </button>
                         <div class="dropdown-menu dropdown-menu-right" id="age-users-dropdown-menu">
-                          <a class="dropdown-item" href="javascript:void(0)">Action 1</a>
-                          <a class="dropdown-item" href="javascript:void(0)">Action 2</a>
+                          <a class="dropdown-item" href="javascript:void(0)">More..</a>
+                         <!-- <a class="dropdown-item" href="javascript:void(0)">Action 2</a>-->
                         </div>
                       </div>
                     </div>
@@ -470,16 +489,16 @@
               </div>
               <!-- / Charts -->
 
-              <div class="col-md-8 col-lg-12 col-xl-9">
+              <div class="col-md-12 col-lg-12 col-xl-12">
 
                 <!-- Popular queries -->
                 <div class="nav-tabs-top mb-4">
                   <ul class="nav nav-tabs">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#sale-stats">Products</a>
+                      <a class="nav-link active" data-toggle="tab" href="#sale-stats">Out&nbsp;of&nbsp;Stock</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#latest-sales">Latest sales</a>
+                      <a class="nav-link" data-toggle="tab" href="#latest-sales">Seller&nbsp;Enquiry</a>
                     </li>
                   </ul>
                   <div class="tab-content">
@@ -488,13 +507,14 @@
                         <thead>
                           <tr>
                             <th>No</th>
-                            <th>product</th>
-                            <th>Prod&nbsp;Id</th>
-                            <th>Seller</th>
+                            <th>Product&nbsp;Name</th>
+                            <th>Product&nbsp;Id</th>
+                            <th>Vendor&nbsp;Name</th>
                           <!--  <th>Email</th>
-                            <th>mobile_number</th>-->
-                            <th>max&nbsp;Quantity</th>
+                            <th>mobileV_number</th>-->
+                            <th>Max&nbsp;Offer&nbsp;Quantity</th>
                             <th>Current&nbsp;Quantity</th>
+                            <th>OutofStock&nbsp;Date</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -508,6 +528,7 @@
                             <td><?php //echo  $list['mobile_number'];  ?></td>-->
                             <td><?php echo  $list['max(qvp.quantity)'];  ?></td>
                             <td><?php echo  $list['pquqnity'];  ?></td>
+                            <td></td>
                           </tr>
                           <?php $i++; } ?>
                           </tbody>
@@ -515,65 +536,35 @@
                       <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
                     </div>
                     <div class="tab-pane fade" id="latest-sales">
-                      <table class="table card-table">
-                        <thead>
-                          <tr>
+                      <table class="table card-table" id="ex-Seller">
+                        <thead><tr>
+                           <th>No</th>
+                            <th>Seller&nbsp;Name</th>
+                            <th>First&nbsp;Name</th>
+                            <th>Last&nbsp;Name</th>
+                            <th>Mobile&nbsp;Number</th> 
+                            <th>Email&nbsp;Id</th>
+                           <th>Date&nbsp;of&nbsp;Ragistration</th>
+                          </tr>                          <!--<tr>
+                           <th>No</th>
                             <th>Product</th>
+                            <th>Category</th>
+                            <th>section_name</th>
                             <th>Qty.</th>
-                            <th>Sum.</th>
-                          </tr>
+                          </tr>-->
                         </thead>
                         <tbody>
+                        <?php /* $i=1; foreach($letest_sell as $list) { ?>
                           <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">PlayStation 4 1TB (Jet Black)</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$480.00</td>
+                            <td><?php echo  $i;  ?></td>
+                            <td><?php echo  $list['prod_name'];  ?></td>
+                            <td><?php echo  $list['cat_name'];  ?></td>
+                            <td><?php echo  $list['section_name'];  ?></td>
+                            <td><?php echo  $list['quantity'];  ?></td>
+                          
                           </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Nike Men Black Liteforce III Sneakers</a>
-                            </td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">$115.1</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Wireless headphones</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$235.55</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">HERO ATHLETES BAG</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$160.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">POÄNG</a>
-                            </td>
-                            <td class="align-middle">3</td>
-                            <td class="align-middle">$477.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">Apple iWatch (black)</a>
-                            </td>
-                            <td class="align-middle">1</td>
-                            <td class="align-middle">$399.00</td>
-                          </tr>
-                          <tr>
-                            <td class="align-middle">
-                              <a href="javascript:void(0)" class="text-dark">WALKING 400 BLUE CAT3</a>
-                            </td>
-                            <td class="align-middle">2</td>
-                            <td class="align-middle">$41.1</td>
-                          </tr>
-                        </tbody>
+                          <?php $i++;} */ ?>
+                         </tbody>
                       </table>
                       <a href="javascript:void(0)" class="card-footer d-block text-center text-dark small font-weight-semibold">SHOW MORE</a>
                     </div>
@@ -582,9 +573,9 @@
                 <!-- / Popular queries -->
 
               </div>
-              <div class="col-md-4 col-lg-12 col-xl-3">
+              <!--<div class="col-md-4 col-lg-12 col-xl-3">
 
-                <!-- Stats -->
+               
                 <div class="row">
                   <div class="col-sm-4 col-md-12 col-lg-4 col-xl-12">
 
@@ -629,9 +620,9 @@
 
                   </div>
                 </div>
-                <!-- / Stats -->
+               
 
-              </div>
+              </div>-->
             </div>
 
           </div>
@@ -1067,8 +1058,8 @@ for (int i=0;i<6; i++){
     }
   });
 
-  $('#ex-stats').DataTable();
-  
+  $('#ex-stats').DataTable({searching: false, paging: false, info: false});
+   $('#ex-Seller').DataTable({searching: false, paging: false, info: false});
   });
   </script>
 </body>

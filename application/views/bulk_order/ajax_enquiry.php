@@ -1,15 +1,15 @@
 <div class="card-datatable table-responsive" id="cng_tbl">
-                 <table id="example" class="table table-striped table-bordered" style="width:100%">
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
                    <thead>
                         <tr>
                             <th>#</th>
                               <th>Name</th>
-                              <th>Email</th>
+                              <!-- <th>Email</th> -->
                               <th>Mobile&nbsp;No.</th>
                               <th>Product</th>
                               <th>Quantity</th>
-                              <th>Response</th>
-                              <th>Action&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <!-- <th>Response</th> -->
+                              <th>Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         </tr>
                     </thead>
                      <tbody id="tc">
@@ -23,13 +23,12 @@
                              ?>
                          <tr>
                            <td><?php echo $i++; ?></td>
-                           <td><?php echo $value['name'] ?></td>
-                           <td><?php echo $value['email'] ?></td>
+                           <td><?php echo $value['name']; ?>&nbsp;,<br><?php echo $value['email']; ?></td>
+                           <!-- <td><?php echo $value['email'] ?></td> -->
                            <td><?php echo $value['mobile'] ?></td>
                            <td><?php echo $value['product'] ?></td>
                            <td><?php echo $value['quantity'] ?></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="<?php echo $bulk_id_pro; ?> "> <?php if(!empty($data[0]['cnt']) && $data[0]['cnt']!=0) { ?> <span class="badge badge-outline-success"><?php echo $data[0]['cnt'];?></span> <?php }else{} ?> </a></td> 
-                            <td><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a>&nbsp;|&nbsp;<a href="#  " class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="fas fa-ban d-block" style="color: red;"></i></a>
+                            <td><a  href="<?php echo $bulk_id_pro; ?> "> <?php if(!empty($data[0]['cnt']) && $data[0]['cnt']!=0) { ?> <span class="btn btn-xs btn-outline-success"><?php echo $data[0]['cnt'];?></span> <?php }else{} ?> </a><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-sm btn-outline-primary"  ><i class="ion ion-ios-mail-open d-block"></i></a>&nbsp;|&nbsp;<a href="<?= ADMIN_PATH.'enquiry/del_enq/' ?><?php echo $value['bulk_id']; ?>" onclick="return confirm('Are you sure you want to delete ?');" class="btn btn-sm btn-outline-danger"  ><i class="ion ion-ios-close d-block"></i></a>
 
                               </td>
                          </tr>

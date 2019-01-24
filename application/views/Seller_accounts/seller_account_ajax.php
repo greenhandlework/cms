@@ -1,3 +1,4 @@
+ <div class="post-list" id="postList">
 <div class="card-datatable table-responsive" id="cng_ajax">
             <table id="seller_1" class="table table-hover table-bordered" style="width:100%">
                        <thead>
@@ -26,9 +27,9 @@
                                   <td><?php echo $value['user_id'] ?></td>
                                   <td><?php echo $value['mobile_number'] ?></td>
                                   <td><?php echo $value['email'] ?></td>
-                                  <td><a href="<?php echo $bulk_id_pro; ?>" class="badge badge-success" title="" data-original-title="View"><i class="fab fa-readme d-block"></i></a>&nbsp;|&nbsp;<a href="#" onclick="delete_seller1('<?= ADMIN_PATH.'seller_accounts/delete_seller/' ?><?php echo $value['user_id'] ?>')" class="badge badge-danger" ><i class="fas fa-minus-circle d-block"></i></a>
+                                  <td><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-xs btn-outline-success" >View</a>&nbsp;|&nbsp;<a href="<?= ADMIN_PATH.'seller_accounts/delete_seller/' ?><?php echo $value['user_id'] ?>" onclick="return confirm('Are you sure ?');" class="btn btn-xs btn-outline-danger" ><i class="ion ion-ios-close d-block"></i></a>
 
-                              </td>
+                                  </td>
                                 </tr>
                           <?php   } ?>
                              
@@ -36,8 +37,5 @@
                       
                     </table>
   </div>
-  <script type="text/javascript">
-     $(document).ready(function() {
-    $('#seller_1').DataTable();
-} );
-  </script>
+  <?php echo $this->ajax_pagination->create_links(); ?>
+  </div>

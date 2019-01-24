@@ -56,4 +56,13 @@
   <!-- Page -->
   <link rel="stylesheet" href="<?= ADMIN_VENDOR_PATH.'css/pages/products.css'?>">
 
+    <!-- Libs -->
+  <link rel="stylesheet" href="<?= ADMIN_VENDOR_PATH.'libs/perfect-scrollbar/perfect-scrollbar.css'?>">
+  <link rel="stylesheet" href="<?= ADMIN_VENDOR_PATH.'libs/spinkit/spinkit.css'?>">
+   <link rel="stylesheet" href="<?= ADMIN_VENDOR_PATH.'libs/bootstrap-sweetalert/bootstrap-sweetalert.css'?>">
 
+<style type="text/css">
+    .table tbody tr{
+      font-size: 12px;
+    }
+  </style>

@@ -1,0 +1,270 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+
+body {
+  	background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    
+    margin-top: 50px;
+}
+
+
+
+#headerwrap {
+	
+	margin-top: -10px;
+	padding-top:20px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 634px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+#header2 {
+
+	margin-top: -10px;
+	padding-top:20px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 338px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+.container w img{
+  height: 24px;
+  margin-right: -16px;
+  margin-bottom: -6px;
+  vertical-align:text-bottom; /* align the text */
+}
+
+
+.button {
+    background-color: #009ACD;
+    border: none;
+    color: white;
+	width: 263px;
+	height:50px;
+	font-size :18px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+	line-height:50px;
+}
+
+
+p.sansserif {
+    font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	display:inline-block;
+	text-align: justify;
+    text-justify: inter-word;
+}
+
+p.para{
+font-family: Arial, Helvetica, sans-serif;
+font-style: normal;
+font-size: 200%;
+font-weight: 700;
+text-align:center;
+}	
+
+
+font.ff{
+font-size:33px;
+
+}
+
+img.single{
+margin-right: 12px;
+
+height: 221px;
+margin-left: -44px;
+margin-top: 16px;
+}
+
+img.single1{
+margin-right: -29px;
+    height: 221px;
+    margin-left: 6px;
+    margin-top: 18px;
+
+}
+
+
+
+
+
+
+#content {
+    position: relative;
+	
+}
+
+a {
+    text-decoration: none !important;
+}
+
+
+.btn {
+	
+	float:right;
+	margin-top: -6px;
+    display: inline-block;
+    padding: 9px 56px;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+
+
+.btn2{
+	
+
+	margin-top: 20px;
+    display: inline-block;
+    padding: 9px 50px;
+    margin-bottom: 0;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 7px;
+}
+
+.glyphicon {
+    font-size: 33px;
+	 text-align: center;
+    margin-left: -18px;
+    position: relative;
+    top: 5px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+mark {
+    background-color:	#5cb85c;
+    color: black;
+}
+
+
+
+#p1{
+
+height:264px;
+
+background:#333333;
+}
+
+
+#p2{
+
+height:264px;
+
+background:#33cccc;
+}
+
+
+#p3{
+
+height:264px;
+
+background:#ffcc66;
+}
+
+
+#p4{
+
+height:264px;
+
+background:#ff6666;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

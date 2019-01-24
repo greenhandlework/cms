@@ -1,0 +1,2 @@
+AuthName "Ankita"
+AuthUserFile "/home/ghdemo/.htpasswds/public_html/css/passwd"

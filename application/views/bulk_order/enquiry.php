@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+        <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -37,29 +37,36 @@
             <div class="ui-bordered px-4 pt-4 mb-4">
               <form action="" method="post" id='search_form'>
               <div class="form-row">
+                <div class="col-md mb-2"></div>
                 <div class="col-md mb-4">
-                  <label class="form-label pb-1">Sales
-                    <span id="product-sales-slider-value" class="text-muted font-weight-normal ml-2">10 - 834</span>
+                  <label class="form-label ">Date
                   </label>
                   <input type="text" id="b-m-dtp-date" class="form-control" name="enquiry_date" placeholder="Date" data-dtp="dtp_u0u3J" >
                 </div>
-                <div class="col-md mb-4">
-                 <!--  <label class="form-label">Status</label>
-                  <select class="custom-select" name="seller_status">
-                    <option value="seller">Seller</option>
-                    <option value="registered_seller">Registered&nbsp;Seller</option>
-                    <option value="vendor">Vendor</option>
-                    <option value="offline_seller">Offline&nbsp;Seller</option>
-                  </select> -->
-                </div>
+               
                 <div class="col-md mb-4">
                   <label class="form-label">Search</label>
                   <input type="text" class="form-control" placeholder="Search" name="search">
                 </div> 
-                  <div class="col-md col-xl-2 mb-4">
-                  <label class="form-label d-none d-md-block">&nbsp;</label>
-                  <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                 
+                <div class="col-md col-xl-2 mb-4">
+                  <div class="form-row">
+                    <div class="col-md md-8">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                     <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                    </div>
+                    <div class="col-md md-4">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                       <a href="javascript:void(0)" onclick="clr()" class="btn btn-secondary "><i class="ion ion-md-refresh d-block" style="margin: 4px"></i></a>
+                    </div>
+                  </div>
+                  <!-- <label class="form-label d-none d-md-block">&nbsp;</label> -->
+                  <!-- <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                  <a href=""><i class="fas fa-undo-alt d-block"></i></a> -->
                 </div>
+                <div class="col-md mb-2"></div>
+
+
               </div>
            
             
@@ -73,12 +80,12 @@
                         <tr>
                             <th>#</th>
                               <th>Name</th>
-                              <th>Email</th>
+                              <!-- <th>Email</th> -->
                               <th>Mobile&nbsp;No.</th>
                               <th>Product</th>
                               <th>Quantity</th>
-                              <th>Response</th>
-                              <th>Action&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                              <!-- <th>Response</th> -->
+                              <th>Action&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                         </tr>
                     </thead>
                      <tbody id="tc">
@@ -92,14 +99,16 @@
                              ?>
                          <tr>
                            <td><?php echo $i++; ?></td>
-                           <td><?php echo $value['name'] ?></td>
-                           <td><?php echo $value['email'] ?></td>
+                           <td><?php echo $value['name']; ?>&nbsp;,<br><?php echo $value['email']; ?></td>
+                           <!-- <td><?php echo $value['email'] ?></td> -->
                            <td><?php echo $value['mobile'] ?></td>
                            <td><?php echo $value['product'] ?></td>
                            <td><?php echo $value['quantity'] ?></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="<?php echo $bulk_id_pro; ?> "> <?php if(!empty($data[0]['cnt']) && $data[0]['cnt']!=0) { ?> <span class="badge badge-outline-success"><?php echo $data[0]['cnt'];?></span> <?php }else{} ?> </a></td> 
-                            <td><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a>&nbsp;|&nbsp;<a href="#  " class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="fas fa-ban d-block" style="color: red;"></i></a>
-
+                            <td><?php if($value['status']==2){ ?>
+                              <a class="btn btn-xs btn-outline-success"  href="<?= ADMIN_PATH.'enquiry/bulk_order_detail' ?>/<?php echo  $value['bulk_id']; ?>" >Order Placed</a>
+                            <?php }else { ?>
+                              <a  href="<?php echo $bulk_id_pro; ?> "> <?php if(!empty($data[0]['cnt']) && $data[0]['cnt']!=0) { ?> <span class="btn btn-xs btn-outline-success"><?php echo $data[0]['cnt'];?></span> <?php }else{} ?> </a><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-sm btn-outline-primary"  ><i class="ion ion-ios-mail-open d-block"></i></a>&nbsp;|&nbsp;<a href="<?= ADMIN_PATH.'enquiry/del_enq/' ?><?php echo $value['bulk_id']; ?>" onclick="return confirm('Are you sure you want to delete ?');" class="btn btn-sm btn-outline-danger"  ><i class="ion ion-ios-close d-block"></i></a>
+                            <?php } ?>
                               </td>
                          </tr>
                        <?php } ?>                
@@ -146,6 +155,11 @@
     $('#example').DataTable();
 
 } );
+
+function clr(){
+  document.getElementById("search_form").reset();
+}
+
   </script>
 
 </body>

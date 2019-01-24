@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+       <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -41,31 +41,44 @@
 
             <!-- Filters -->
             <div class="ui-bordered px-4 pt-4 mb-4">
-              <form action="<?= ADMIN_PATH.'welcome/get' ?>" method="post" id='search_form'>
+              <form action="" method="post" id='search_form'>
               <div class="form-row">
                 <div class="col-md mb-4">
-                  <label class="form-label pb-1">Sales
-                    <span id="product-sales-slider-value" class="text-muted font-weight-normal ml-2">10 - 834</span>
+                  <label class="form-label">Date
+                  
                   </label>
-                  <div id="product-sales-slider" class="product-list-slider my-3 mx-2 noUi-target noUi-ltr noUi-horizontal"><div class="noUi-base"><div class="noUi-connects"><div class="noUi-connect" style="transform: translate(0%, 0px) scale(1, 1);"></div></div><div class="noUi-origin" style="transform: translate(-100%, 0px); z-index: 5;"><div class="noUi-handle noUi-handle-lower" data-handle="0" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="0.0" aria-valuetext="10"><div class="noUi-tooltip">10</div></div></div><div class="noUi-origin" style="transform: translate(0%, 0px); z-index: 4;"><div class="noUi-handle noUi-handle-upper" data-handle="1" tabindex="0" role="slider" aria-orientation="horizontal" aria-valuemin="0.0" aria-valuemax="100.0" aria-valuenow="100.0" aria-valuetext="834"><div class="noUi-tooltip">834</div></div></div></div></div>
+               <input type="text" id="b-m-dtp-date" class="form-control" name="order_date" placeholder="Date" data-dtp="dtp_u0u3J" >
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Status</label>
-                  <select class="custom-select">
-                    <option>Any</option>
-                    <option>Published</option>
-                    <option>Out of stock</option>
-                    <option>Pending</option>
-                    <option>Hidden</option>
+                  <select class="custom-select" name="order_status">
+                    <option value="Order">Order</option>
+                    <option value="Production">Production</option>
+                    <option value="Packed">Packed</option>
+                    <option value="Dispatched">Dispatched</option>
+                    <option value="Delivered">Delivered</option>
+                    <option value="Cancel">Cancel</option>
                   </select>
                 </div>
                 <div class="col-md mb-4">
                   <label class="form-label">Search</label>
                   <input type="text" class="form-control" placeholder="Search" name="search">
                 </div> 
-                  <div class="col-md col-xl-2 mb-4">
-                  <label class="form-label d-none d-md-block">&nbsp;</label>
-                  <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                
+                <div class="col-md col-xl-2 mb-4">
+                  <div class="form-row">
+                    <div class="col-md md-8">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                     <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                    </div>
+                    <div class="col-md md-4">
+                      <label class="form-label d-none d-md-block">&nbsp;</label>
+                       <a href="javascript:void(0)" onclick="clr()" class="btn btn-secondary "><i class="ion ion-md-refresh d-block" style="margin: 4px"></i></a>
+                    </div>
+                  </div>
+                  <!-- <label class="form-label d-none d-md-block">&nbsp;</label> -->
+                  <!-- <button type="button" id="search_btn" class="btn btn-secondary btn-block">Show</button>
+                  <a href=""><i class="fas fa-undo-alt d-block"></i></a> -->
                 </div>
               </div>
            
@@ -75,7 +88,18 @@
             <!-- / Filters -->
 
             <div class="card">
-              <div class="card-datatable table-responsive">
+              <div class="sk-cube-grid sk-primary" id="loding" style="display: none;">
+                      <div class="sk-cube sk-cube1"></div>
+                      <div class="sk-cube sk-cube2"></div>
+                      <div class="sk-cube sk-cube3"></div>
+                      <div class="sk-cube sk-cube4"></div>
+                      <div class="sk-cube sk-cube5"></div>
+                      <div class="sk-cube sk-cube6"></div>
+                      <div class="sk-cube sk-cube7"></div>
+                      <div class="sk-cube sk-cube8"></div>
+                      <div class="sk-cube sk-cube9"></div>
+              </div>
+              <div class="card-datatable table-responsive" id="cng_tbl">
              <table id="example" class="table table-striped table-bordered" style="width:100%">
         <thead>
             <tr>
@@ -95,12 +119,16 @@
                     // $image = ADMIN_PATH.'' 
                    ?>
                    <tr >
-                   <td class="py-2 align-middle" style="min-width: 300px;"><div class="media align-items-center"><img class="ui-w-40 d-block" src="<?= ADMIN_IMAGE_PATH.'uikit/ps4.jpg'?>" alt=""><span class="media-body d-block text-dark ml-3"><?php echo $value['prod_name'] ?></span></div></td>
+                   <td class="py-2 align-middle" style="min-width: 300px;"><div class="media align-items-center"><img class="ui-w-40 d-block" src="<?= ADMIN_IMAGE_PATH.'uikit/ps4.jpg'?>" alt=""><span class="media-body d-block text-dark ml-3"><?php echo $value['prod_name'] ?><br>&nbsp;(<?php 
+                    $datetime = new DateTime($value['ordered_date']);
+                    $date = $datetime->format('d-m-Y');     
+                    echo $date; ?>) </span></div></td>
+
                     <td><?php echo str_replace('GHTRID_','',$value['Order_id']); ?></td>
                    <!--  <td><?php echo $value['ordered_date']; ?></td> -->
                     <!-- <td></td> -->
-                    <td><?php echo $value['email']; ?></td>
-                    <td><?php echo $value['mobile_number']; ?></td>
+                    <td><?php if($value['email']!=0 || !empty($value['email']) ){ echo $value['email']; } ?></td>
+                    <td><?php if($value['mobile_number']!=0 || !empty($value['mobile_number'])) { echo $value['mobile_number'];} ?></td>
                     <td><?php if($value['order_status']=='Order'){ ?>
                         <span class="badge badge-outline-success"><?php echo $value['order_status']; ?></span>
                        <?php }elseif($value['order_status']=='Production'){ ?>
@@ -147,55 +175,35 @@
   <script type="text/javascript">
     $(document).ready(function(){
       $('#search_btn').click(function(){
-        
+        $("#loding").css("display", "");
+        $("#cng_tbl").css("display", "none");
         $.ajax({
-          url  : "<?= ADMIN_PATH.'welcome/get' ?>",
+          url  : "<?= ADMIN_PATH.'order_details/get' ?>",
           data : $('#search_form').serialize(),
           type : "POST",
 
           success:function(resp){
             console.log(resp);
-
-            var json = JSON.parse(resp);
-            var content = '';
-            for(var i=0; i<json.length;i++){
-              content +='<tr>';
-              content +='<td>'+  i+1 +'</td>';
-              content +='<td>'+ json[i].payment_date+'</td>';
-              content +='<td>'+ json[i].email+'</td>';
-              content +='<td>'+ json[i].product_id+'</td>';
-              content +='<td>'+ json[i].payment_Amount+'</td>';
-              content +='<td>'+ json[i].ordered_date+'</td>';
-              content +='<td><a href="javascript:void(0)" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip" title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a></td>';
-              content +='</tr>';
-            }
-
-
-            $('#tc').html(content);
+            $("#loding").css("display", "none");
+            $("#cng_tbl").css("display", "");
+             $('#cng_tbl').html(resp);
+           
           }
         })
       });
 
       
     })
-    // function get(id) {
-    //     var cart_product_id = id;
-        
-    //     $.ajax({
-    //       url  :"<?= ADMIN_PATH."index.php/welcome/order_detail"?>",
-    //       data : {cart_product_id:cart_product_id},
-    //       type :"POST",
-
-    //       success:function(resp){
-    //         console.log()
-    //       }
-
-    //     })
-    //   }
+   
 
       $(document).ready(function() {
     $('#example').DataTable();
 } );
+
+function clr(){
+  document.getElementById("search_form").reset();
+}
+
   </script>
 </body>
 

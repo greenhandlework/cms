@@ -24,7 +24,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+         <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -46,7 +46,7 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Name</label>
                           <div class="col-sm-9">
-                            <input type="text" name="name" class="form-control form-control-sm" placeholder="Name" value="<?php if(isset($record[0]['name'])){ echo $record[0]['name']; }?>" >
+                            <input type="text" name="name" class="form-control form-control-sm" placeholder="Name" value="<?php if(isset($record[0]['name'])){ echo $record[0]['name']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?> >
                           </div>
                        </div>
                      </div>
@@ -55,7 +55,7 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Business Name</label>
                           <div class="col-sm-9">
-                            <input type="text" name="business_name" class="form-control form-control-sm" placeholder="Business Name" value="<?php if(isset($record[0]['business_name'])){ echo $record[0]['business_name']; }?>">
+                            <input type="text" name="business_name" class="form-control form-control-sm" placeholder="Business Name" value="<?php if(isset($record[0]['business_name'])){ echo $record[0]['business_name']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
@@ -64,7 +64,7 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Mobile Number</label>
                           <div class="col-sm-9">
-                            <input type="text" name="mobile" class="form-control form-control-sm" placeholder="Mobile Number" value="<?php if(isset($record[0]['mobile'])){ echo $record[0]['mobile']; }?>">
+                            <input type="text" name="mobile" class="form-control form-control-sm" placeholder="Mobile Number" value="<?php if(isset($record[0]['mobile'])){ echo $record[0]['mobile']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
@@ -73,7 +73,7 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Email  </label>
                           <div class="col-sm-9">
-                            <input type="text" name="email" class="form-control form-control-sm" placeholder="Email" value="<?php if(isset($record[0]['email'])){ echo $record[0]['email']; }?>">
+                            <input type="text" name="email" class="form-control form-control-sm" placeholder="Email" value="<?php if(isset($record[0]['email'])){ echo $record[0]['email']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
@@ -84,7 +84,7 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Product</label>
                           <div class="col-sm-9">
-                            <input type="text" name="product" class="form-control form-control-sm" placeholder="Product" value="<?php if(isset($record[0]['product'])){ echo $record[0]['product']; }?>">
+                            <input type="text" name="product" class="form-control form-control-sm" placeholder="Product" value="<?php if(isset($record[0]['product'])){ echo $record[0]['product']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
@@ -93,7 +93,7 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Quantity</label>
                           <div class="col-sm-9">
-                            <input type="text"  name="quantity" class="form-control form-control-sm" placeholder="Quantity" value="<?php if(isset($record[0]['quantity'])){ echo $record[0]['quantity']; }?>">
+                            <input type="text"  name="quantity" class="form-control form-control-sm" placeholder="Quantity" value="<?php if(isset($record[0]['quantity'])){ echo $record[0]['quantity']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
@@ -102,8 +102,8 @@
                         <div class="row">
                             <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Message</label>
                             <div class="col-sm-9">
-                              <textarea name="message"  class="form-control form-control-sm">
-                                <?php if(isset($record[0]['message'])){ echo $record[0]['message']; }?>
+                              <textarea name="message"  class="form-control form-control-sm" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
+                                <?php if(isset($record[0]['message'])){ echo ltrim($record[0]['message']); }?>
                               </textarea>
                              
                             </div>
@@ -112,7 +112,11 @@
 
                      <div class="list-group-item list-group-item-action">
                         <div class="row">
+                           <?php if($record[0]['status']==2){?> 
+                              <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Product Image</label>
+                           <?php }else{ ?> 
                             <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Choose Image</label>
+                          <?php } ?>
                             <div class="col-sm-9">
                               <?php   
                                  $imgg = base_url().'upload/bulk_order/'.$record[0]['image'];
@@ -120,7 +124,10 @@
                               // echo 1; ?>
                                   <div class="row">
                                   <div class="col-sm-6">
-                                    <input type="file" name="img" value="<?php echo $imgg; ?>">
+                                    <?php if($record[0]['status']==2){ }else{ ?> 
+                                      <input type="file" name="img" value="<?php echo $imgg; ?>">
+                                     <?php } ?>
+                                    
                                     <input type="hidden" name="present_img" value="<?php echo $record[0]['image']; ?>">
                                   </div>
                                   <div class="col-sm-6">
@@ -147,22 +154,26 @@
                                   </div>
                                 </div>
                                <?php }else{  //echo 0; ?>
+                                <?php if($record[0]['status']==2){ }else{?> 
                                  <input type="file" name="img" value="<?php echo $imgg; ?>">
-                                                  <?php } ?>
+                                                  <?php } } ?>
                              
                             </div>
                          </div>
                      </div>
 
-                     <div class="list-group-item list-group-item-action">
+                    <?php if($record[0]['status']==1){ ?>
+                        <div class="list-group-item list-group-item-action">
                         <div class="row">
-                            <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right"></label>
-                            <div class="col-sm-9">
+                            <!-- <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right"></label> -->
+                            <div class="col-sm-12">
                                 <input class="btn btn-primary" type="submit"  id='btnn' value="Submit">
-                             
+                             <label style="color: red"><?php //echo $this->session->flashdata('item'); ?></label>
                             </div>
                          </div>
                      </div>
+                   <?php } ?>  
+                     
 
                      
                    </div>  
@@ -179,11 +190,12 @@
                     <div id="detail_frm" class="collapse show">
 
                     <div class="input_fields_container">
-                           <div class="list-group-item list-group-item-action">
+                 
+                    <div class="list-group-item list-group-item-action">
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">City</label>
                           <div class="col-sm-9">
-                            <input type="text" name="city" class="form-control form-control-sm" placeholder="City" value="<?php if(isset($record[0]['city'])){ echo $record[0]['city']; }?>">
+                            <input type="text" name="city" class="form-control form-control-sm" placeholder="City" value="<?php if(isset($record[0]['city'])){ echo $record[0]['city']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
@@ -192,16 +204,17 @@
                       <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-3 text-sm-right">Pincode  </label>
                           <div class="col-sm-9">
-                            <input type="text" name="pincode" class="form-control form-control-sm" placeholder="Pincode " value="<?php if(isset($record[0]['pincode'])){ echo $record[0]['pincode']; }?>">
+                            <input type="text" name="pincode" class="form-control form-control-sm" placeholder="Pincode " value="<?php if(isset($record[0]['pincode'])){ echo $record[0]['pincode']; }?>" <?php if($record[0]['status']==2){?> readonly <?php } ?>>
                           </div>
                        </div>
                      </div>
-                      <?php 
+
+                      <?php if($record[0]['status']==1){ 
                         foreach ($order_quote as $key => $value) { ?>
                       <div class="list-group-item list-group-item-action" id="t<?php echo $value['id']; ?>">
                         <div class="row">
                             <div class="col-sm-5">
-                              <input type="text"  name="title[]"  class="form-control form-control-sm" placeholder="label" value="<?php echo $value['title']; ?>">
+                              <input type="text"  name="title[]"  class="form-control form-control-sm" placeholder="label" value="<?php echo $value['title']; ?>" >
                             </div>
                             <div class="col-sm-5">
                               <input type="text" name="desc[]" class="form-control form-control-sm" placeholder="value" value="<?php echo $value['description']; ?>">
@@ -214,7 +227,7 @@
                           </div>
                           
                        </div>
-                       <?php } ?>
+                       <?php }  ?>
 
 
                     <div class="list-group-item list-group-item-action">
@@ -233,6 +246,7 @@
                           </div>
 
                        </div>
+                  <?php } ?>     
                      </div>
                    
                      </div>
@@ -241,8 +255,10 @@
               </div>
             </div></form>
 <hr>
- <button type="button" data-toggle="collapse" data-target="#seller_frm"  class="btn btn-round btn-outline-primary">List&nbsp;of&nbsp;Seller</button>
-                    <div id="seller_frm" class="collapse "><br>
+
+  <?php if($record[0]['status']==1){ ?>
+       <button type="button" data-toggle="collapse" data-target="#seller_frm"  class="btn btn-round btn-outline-primary">List&nbsp;of&nbsp;Seller</button>
+         <div id="seller_frm" class="collapse "><br>
               <div class="row">
                   
                 <div class="card">
@@ -296,7 +312,7 @@
                                               ?></td>
                                             <td>
                                                <!-- <button class="btn-sm btn-primary add_more_button" style="background-color: #5DADE2"> <i class="fas fa-plus d-block"></i></button>  -->
-                                              <a href="javascript:(0)" class="btn-sm btn-primary" style="background-color: #5DADE2" onclick="todo(<?php echo $id; ?>,<?php echo $bulk_id ?>)"><b>+</b></a></td>
+                                              <a href="javascript:void(0)" class="btn-sm btn-primary" style="background-color: #5DADE2" onclick="todo(<?php echo $id; ?>,<?php echo $bulk_id ?>)"><b>+</b></a></td>
                                           </tr>
                                         <?php } ?>
                              
@@ -306,75 +322,128 @@
                    </div>
                 </div>
               </div>
-              </div> <!--Row -->
+          </div> <!--Row -->
 <hr>
-<center><h4 class="list-group-item list-group-item-primary">Responded&nbsp;Seller</h4><hr></center>
-<form action="<?php echo base_url()?>enquiry/ins_mail" class="" method="post" enctype="multipart/form-data" />
-   <input type="text" name="bulk_id" value="<?php echo $bulk_id; ?>" style="display: none;">
-      <div class="row">
-          
-          <div class="card">
-              <div class="card-datatable table-responsive">
-                 <table id="responded_seller" class="table table-striped table-bordered" style="width:100%;">
-                   <thead>
-                        <tr>
-                          <!-- <th>#</th> -->
-                          <th>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-                          <th>Business&nbsp;name</th>
-                          <th>Seller&nbsp;email</th>
-                          <th>Location</th>
-                          <th>Price</th>
-                          <th>GST(%)</th>
-                          <th>Delivery&nbsp;Date</th>
-                          <th>Message</th>
-                          <th>Total&nbsp;weight&nbsp;in&nbsp;kg</th>
-                          <th>Action</th>      
-                        </tr>
-                    </thead>
-                     <tbody id="list_seller" style="font">
-                       <?php $i=1;
-                       foreach ($responded as $key => $value) { 
-                         $datetime = new DateTime($value['date']);
-                         $date = $datetime->format('d-m-Y');
-                        ?>
-                          <tr id="a<?php echo $value['seller_id'] ?>">
-                            <!-- <th><?php echo $i++; ?></th> -->
-                            <th><?php echo $date; ?></th>
-                            <th><?php echo $value['business_name'] ?></th>
-                            <th><?php echo $value['seller_email'] ?><input type="text" name="emails[]" value="<?php echo $value['seller_id']; ?>" style='display: none;'></th>
-                            <th><?php echo $value['city'] ?></th>
-                            <th><?php if($value['price']==0){ echo "";}else{ echo $value['price'];} ?></th>
-                            <th><?php echo $value['gst'] ?></th>
-                            <th><?php echo $value['delivery_date'] ?></th>
-                            <th><?php echo $value['message'] ?></th>
-                            <th><?php echo $value['total_weight'] ?></th>
-                           <th>
-                             <?php 
-                                if(!empty($value['price']) && $value['status']==2){ ?>
-                                    <b style="color: blue"><i class="ion ion-md-done-all" style="font-size: medium"></i></b>
-                               <?php }elseif(!empty($value['price']) && $value['status']==1){ ?>
-                                    <a style="color: green" href="javascript:(0)" onclick="place_ord(<?php echo $value['seller_id'] ?>,<?php echo $value['bulk_id'] ?>)"><i class="ion ion-ios-checkmark-circle-outline" style="font-size: medium"></i></a>&nbsp;|&nbsp;<a style="color: red" href="javascript:(0)" onclick="rem(<?php echo $value['seller_id'] ?>)"><i class="ion ion-ios-remove-circle-outline" style="font-size: medium"></i></a>
-                                <?php }else{ if($value['status']==3){}else{ ?>
-                                  <a style="color: red;" href="javascript:(0)" onclick="rem(<?php echo $value['seller_id'] ?>)"><i class="ion ion-ios-remove-circle-outline" style="font-size: medium"></i></a> 
-                                <?php } }
-                             ?>
-                           </th>
-                          </tr>
-                          <?php } ?>     
-                      </tbody>
-                  
-                </table>
-          </div>
-          <!-- / Content -->          
+      <center><h4 class="list-group-item list-group-item-primary">Responded&nbsp;Seller</h4><hr></center>
+      <form action="<?php echo base_url()?>enquiry/ins_mail" class="" method="post" enctype="multipart/form-data" />
+         <input type="text" name="bulk_id" value="<?php echo $bulk_id; ?>" style="display: none;">
+            <div class="row">
+                
+                <div class="card">
+                    <div class="card-datatable table-responsive">
+                       <table id="responded_seller" class="table table-striped table-bordered" style="width:100%;">
+                         <thead>
+                              <tr>
+                                <!-- <th>#</th> -->
+                                <th>Date&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                                <th>Seller&nbsp;details</th>
+                                <!-- <th>Seller&nbsp;email</th> -->
+                                <!-- <th>Location</th> -->
+                                <th>Price</th>
+                                <th>GST(%)</th>
+                                <th>Delivery&nbsp;Days</th>
+                                <th>Message</th>
+                                <th>Total&nbsp;weight&nbsp;in&nbsp;kg</th>
+                                <th>Action</th>      
+                              </tr>
+                          </thead>
+                           <tbody id="list_seller" style="font">
+                             <?php $i=1;
+                             foreach ($responded as $key => $value) { 
+                               $datetime = new DateTime($value['date']);
+                               $date = $datetime->format('d-m-Y');
+                              ?>
+                                <tr id="a<?php echo $value['seller_id'] ?>">
+                                  <!-- <th><?php echo $i++; ?></th> -->
+                                  <th><?php echo $date; ?></th>
+                                  <th><?php echo $value['business_name']; echo "&nbsp;,&nbsp;"; echo $value['city']; echo "&nbsp;,&nbsp;"; ?><br><?php echo $value['seller_email'] ?></th>
+                                  <!-- <th><?php echo $value['seller_email'] ?></th> -->
+                                  <input type="text" name="emails[]" value="<?php echo $value['seller_id']; ?>" style='display: none;'>
+                                  <input type="hidden" name="prod_id" value="<?php echo $value['prod_id']; ?>">
+                                  <!-- <th><?php echo $value['city'] ?></th> -->
+                                  <th><?php if($value['price']==0){ echo "";}else{ echo $value['price'];} ?></th>
+                                  <th><?php echo $value['gst'] ?></th>
+                                  <th><?php echo $value['delivery_date'] ?></th>
+                                  <th><?php echo $value['message'] ?></th>
+                                  <th><?php echo $value['total_weight'] ?></th>
+                                 <th>
+                                   <?php 
+                                      if(!empty($value['price']) && $value['status']==2){ ?>
+                                          <b style="color: blue"><i class="ion ion-md-done-all" style="font-size: medium"></i></b>
+                                     <?php }elseif(!empty($value['price']) && $value['status']==1){ ?>
+                                          <a class="btn btn-xs btn-outline-success" style="color: green" href="<?= ADMIN_PATH.'enquiry/place_order/' ?><?php echo $value['seller_id']; ?>/<?php echo $record[0]['bulk_id']; ?>" onclick="return confirm('Are you sure ?');">Place Order</a>&nbsp;|&nbsp;<a class='btn-sm btn-danger' style='color:white'  href="javascript:void(0)" onclick="rem(<?php echo $value['seller_id'] ?>)" ><b>x</b></a>
+                                      <?php }else{ if($value['status']==3){}else{ ?>
+                                        <a class='btn-sm btn-danger' style='color:white' href="javascript:void(0)" onclick="rem(<?php echo $value['seller_id'] ?>)"><b>x</b></a> 
+                                      <?php } }
+                                   ?>
+                                 </th>
+                                </tr>
+                                <?php } ?>     
+                            </tbody>
+                        
+                      </table>
+                </div>
+                <!-- / Content -->          
 
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-          <input class="btn btn-primary" type="submit" >
-      </div>
-    
-</form>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-md-4">
+                <input class="btn btn-primary" type="submit" value="Send">
+              </div>
+              <div class="col-md-8" style="color: red">
+                 <?php echo $this->session->flashdata('itm'); ?> 
+              </div>
+              
+            </div>
+
+          
+      </form>
+  <?php }else{ 
+      if(isset($placed_seller) && !empty($placed_seller)){
+         
+       ?>
+
+      <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Product&nbsp;Id</th>
+                  <th>Seller&nbsp;Details</th>
+                  <th>Price</th>
+                  <th>GST</th>
+                  <th>Delivery&nbsp;Days</th>
+                  <th>Total&nbsp;wt</th>
+                  <th>Other&nbsp;Details</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <?php 
+                 foreach ($placed_seller as $key => $value) {
+                 $datetime = new DateTime($value['date']); 
+                               $date = $datetime->format('d-m-Y');
+
+                  ?>
+                   <tr>
+                     <th><?php echo $value['prod_id']; ?></th>
+                     <td><?php echo $value['seller_email']; ?><br>
+                         <?php echo $value['business_name']; ?><br>
+                         <?php echo $value['city']; ?>
+                     </td>
+                     <td><?php echo $value['price']; ?></td>
+                     <td><?php echo $value['gst']; ?></td>
+                     <td><?php echo $value['delivery_date']; ?></td>
+                     <td><?php echo $value['total_weight']; ?></td>
+                     <td><?php echo $value['message']; ?></td> 
+                     <td><?php echo $date; ?></td> 
+                   </tr> 
+               <?php } ?>
+                
+              </tbody>
+            </table>
+
+  <?php }  } ?>
 
 
             </div>
@@ -444,7 +513,7 @@ function place_ord(seller_id,bulk_id){
 
         success:function(resp){
           console.log(resp);
-          // window.location.reload();
+          $('#err2').html(resp);
         }
       });
 

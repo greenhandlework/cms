@@ -30,7 +30,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+            <?php $data['page']=$page; $this->load->view('hfs/header',$data); ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -162,80 +162,13 @@
               </div>
              
             </div> 
+             <div id="error23" style="color: red"></div>
             <div class="row">
               <input type="submit" value="Submit" id="submit" class="btn btn-round btn-outline-primary">
-              <!-- <button type="submit" class="btn btn-round btn-outline-primary">Submit</button> -->
-              </form>
             </div>
+              </form>
 <hr>
- <button type="button" data-toggle="collapse" data-target="#seller_frm"  class="btn btn-round btn-outline-primary">List&nbsp;of&nbsp;Seller</button>
-                    <div id="seller_frm" class="collapse "><br>
-              <div class="row">
-                  
-                <div class="card">
-                  <div class="card-datatable table-responsive">
-                     <table id="example" class="table table-striped table-bordered" style="width:100%">
-                       <thead>
-                            <tr>
-                                <th>#</th>
-                                <th >Business Name</th>
-                                <th>Classification</th>
-                                <th>Primary product</th>
-                                <th>Making  process</th>  
-                                <th>Location</th>
-                                <th>Email Id</th>
-                                <th>Mobile number</th>
-                                <th>Type of seller</th>
-                                <th>Action</th>
-                               
-                             </tr>
-                        </thead>
-                         <tbody id="tc">
-                             <?php $i=1; foreach ($seller as $key => $value) { 
-                                         // echo '<pre>'; print_r($bulk_id);
-                                          $id = $value['id'];
-                                          ?>
-                                          <tr id="<?php echo $id; ?>">
-                                            <td><?php echo $i++; ?></td> 
-                                            <td> <?php echo $value['business_name'] ?></td>
-                                             <td><?php echo $value['Classification']; ?></td>
-                                              <td><?php echo $value['Primary_Product']; ?></td>
-                                                <td><?php echo $value['Making_Process']; ?></td>
-                                            <td><?php echo $value['city']; ?></td>
-                                            <td><?php echo $value['email_id']; ?></td>
-                                            <td><?php echo $value['mobile_number']; ?></td>
-                                             <td><?php   
-                                                  $seller_id  = $value['user_id'];
-                                                  $data = $this->db->query("SELECT id from products where seller_id=".$seller_id." and product_status=2 ");
-                                                  $cnt = $data->num_rows();
-                                                 // echo $cnt;
-                                              if($value['role_id']=5 && $value['account_status']=='Yes' && $cnt>0){
-                                                echo "Vender";
-                                              } elseif($value['role_id']=5 && $value['account_status']=='No'){
-                                                echo 'Seller';
-                                              }elseif($value['role_id']=5 && $value['account_status']=='Yes'){
-                                                echo "Registered seller";  
-                                              }elseif($value['role_id']=5 && $value['account_status']=='Offline'){
-                                                echo "Offline";
-                                              }  
 
-
-                                              ?></td>
-                                            <td>
-                                               <!-- <button class="btn-sm btn-primary add_more_button" style="background-color: #5DADE2"> <i class="fas fa-plus d-block"></i></button>  -->
-                                            <!--   <a href="javascript:(0)" class="btn-sm btn-primary" style="background-color: #5DADE2" onclick="todo(<?php echo $id; ?>,<?php echo $bulk_id ?>)"><b>+</b></a> -->
-                                            </td>
-                                          </tr>
-                                        <?php } ?>
-                             
-                          </tbody>
-                      
-                    </table>
-                   </div>
-                </div>
-              </div>
-              </div> <!--Row -->
-              <hr>
             <div class="row">
               <div class="col-md-12">
                   <div class="card">
@@ -255,7 +188,7 @@
                       <?php $i=1;
                       foreach ($bids as $key => $value) { 
                           $datetime = new DateTime($value['date']);
-                               $date = $datetime->format('Y-m-d');
+                               $date = $datetime->format('d-m-Y');
                         ?>
                         <tr>
                           <td><?php echo $i++; ?></td>
@@ -264,38 +197,26 @@
                           <td><?php echo $value['quantity'] ?></td>
                           <td><?php echo $date; ?></td>
                           <td>
-                        <a class="btn btn-xs btn-primary" href="javascript:(0)" onclick="view_bid('<?php echo $value['id'] ?>')">View</a> | <a class="btn btn-xs btn-danger" href="javascript:(0)" onclick="alert('Do you want to delete!')">Delete</a>
-                       </td>
+                              <?php
+                                if($value['status']==1 || $value['status']==3){ ?>
+                                   <!-- <a class="btn btn-xs btn-outline-success icon-btn md-btn-flat product-tooltip" href="javascript:(0)" onclick="alert('Published')" data-original-title="Publish"><i class="ion ion-md-checkmark d-block"></i></a>&nbsp; |&nbsp; -->
+
+                                   <a class="btn btn-xs btn-outline-primary" href="<?=ADMIN_PATH.'bids/seller_list/' ?><?php echo  $value['bid_id']; ?>"  data-original-title="Seller">Seller</a> &nbsp;|&nbsp; <a class="btn btn-xs btn-outline-dark icon-btn md-btn-flat product-tooltip" href="<?= ADMIN_PATH.'bids/edit_bid/' ?><?php echo $value['bid_id'] ?>"  data-original-title="Edit"><i class="ion ion-md-create d-block"></i></a>
+                              <?php }elseif($value['status']==2){ ?>
+                                    <a class="btn btn-xs btn-outline-primary" href="<?=ADMIN_PATH.'bids/seller_list/' ?><?php echo  $value['bid_id']; ?>" data-original-title="Seller">Seller</a> &nbsp;|&nbsp; <a class="btn btn-xs btn-danger" href="javascript:(0)"  onclick="cancel_bid('<?php echo $value['bid_id']; ?>')" data-toggle="modal" data-target="#myModal">Cancel</a>
+                              <?php }elseif($value['status']==4){ ?>
+                                 <a class="btn btn-xs btn-outline-primary" href="<?=ADMIN_PATH.'bids/seller_list/' ?><?php echo  $value['bid_id']; ?>"  data-original-title="Seller">Seller</a> &nbsp;
+                                 <label class="btn-xs btn-success">Bid Close</label>
+                                  <!-- <button type="button" class="btn btn-xs btn-success">Bid Close</button> -->
+                              <?php }  ?>
+                          </td>
                         </tr>
                       <?php } ?>
 
-                    
-                     <!--   <td>
-                         <img src="<?=ADMIN_PATH.'upload/seller_document/demo_image.jpg' ?>" height="100px" width="100px">
-                       </td> -->
-                     
-                      
-                      <!--  <?php $i=1;
-                            foreach ($enq as $key => $value) { 
-                              $data = $this->db->query("SELECT count(bulk_id) as cnt from bulk_order_seller where price!='' and bulk_id=".$value['bulk_id']." ")->result_array();
-
-                                $bulk_id_pro = base_url().'enquiry/bulk_order_detail/'.$value['bulk_id'];
-                               $datetime = new DateTime($value['date']);
-                               $date = $datetime->format('Y-m-d');
-                             ?>
-                         <tr>
-                           <td><?php echo $i++; ?></td>
-                           <td><?php echo $value['name'] ?></td>
-                           <td><?php echo $value['email'] ?></td>
-                           <td><?php echo $value['mobile'] ?></td>
-                           <td><?php echo $value['product'] ?></td>
-                           <td><?php echo $value['quantity'] ?></td>
-                            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a  href="<?php echo $bulk_id_pro; ?> "> <?php if(!empty($data[0]['cnt']) && $data[0]['cnt']!=0) { ?> <span class="badge badge-outline-success"><?php echo $data[0]['cnt'];?></span> <?php }else{} ?> </a></td> 
-                            <td><a href="<?php echo $bulk_id_pro; ?>" class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="ion ion-md-eye"></i></a>&nbsp;|&nbsp;<a href="#  " class="btn btn-default btn-xs icon-btn md-btn-flat product-tooltip"  title="" data-original-title="Show"><i class="fas fa-ban d-block" style="color: red;"></i></a>
-
-                              </td>
-                         </tr>
-                       <?php } ?>   -->              
+                    <!--  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+    Open modal
+  </button> -->
+                             
                          
                       </tbody>
                   
@@ -319,6 +240,42 @@
 
     <!-- Overlay -->
     <div class="layout-overlay layout-sidenav-toggle"></div>
+  </div>
+
+  <!-- model code -->
+
+  <!-- The Modal -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+      <div class="modal-header">
+        <div class="modal-title">
+            <h3 style="margin-bottom: 0px;">
+               <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">×</button> -->
+               <center><label style="color:rgb(217, 83, 79);margin-left: 104px;">Alert!</label></center>
+            </h3>
+            <center><small style="margin-left: 100px;">Please mention appropriate reason to cancel bid.</small></center>                
+        </div>
+                        
+      </div>
+        <!-- Modal body -->
+      <form method="post" id="cancel_bid">
+          <div class="modal-body">
+          <textarea class="form-control" placeholder="Please mention appropriate reason to cancel bid." name="msg"></textarea>
+          <input type="hidden" name="bid_idd" id="bidd">
+          </div>
+          <!-- Modal footer -->
+         <div class="modal-footer">
+          <div id="error1" style="color: red"></div>
+          <div id="success1" style="color: green"></div>
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="can">Save</button>
+         </div>
+      </form>
+      </div>
+    </div>
   </div>
   <!-- / Layout wrapper -->
   <?php $this->load->view('hfs/footer') ?>
@@ -369,28 +326,56 @@
                      cache:false,
                      async:false,
                       success: function(resp){
-                        console.log(resp); return;
+                        //console.log(resp); return;
                         var ss =JSON.parse(resp);
                         if(ss.status==false)
                         {
                             // alert(ss.message);
-                            $('#error').html(ss.message);
+                            $('#error23').html(ss.message);
                         } else {
-                            $('#error').fadeOut(200);
-                            $('#success').html(ss.message).fadeOut(7000);
+                            // $('#error').fadeOut(200);
+                            // $('#success').html(ss.message).fadeOut(7000);
                              swal({
-                                  title: "Product successfully uploaded.",
+                                  title: "Bid added successfully .",
                                   text: "Redirecting in 2 seconds.",
                                   type: "success",
                                   timer: 1500,
                                   showConfirmButton: false
                                 }, function(){
-                                      window.location.href = "<?= base_url('cms/product_upload')?>";
+                                      window.location.href = "<?= base_url('bids/create_bid')?>";
                                 });
                         }
                    }
                  });
             });    
+
+
+    $('#can').click(function(){
+        
+        $.ajax({
+          url  : "<?= ADMIN_PATH.'bids/cancel_bid' ?>",
+          data : $('#cancel_bid').serialize(),
+          type : "POST",
+
+          success:function(resp){
+            console.log(resp);
+           // $('#cng_tbl').html(resp);
+            var ss =JSON.parse(resp);
+                        if(ss.status==false)
+                        {
+                            // alert(ss.message);
+                            $('#error1').html(ss.message);
+                        } else{
+                          
+                          $('#success1').html(ss.message);
+
+                          setTimeout(function(){// wait for 5 secs(2)
+                               location.reload(); // then reload the page.(3)
+                          }, 1000); 
+                        }
+          }
+        })
+      });
 
      });
 
@@ -422,11 +407,11 @@
 
   //View bid call here
 
-  function view_bid(id){
+  function sel_list(id){
     
     $.ajax({
-      url  : "<?=  ADMIN_PATH.'bids/view_bid' ?>",
-      data : {id:id},
+      url  : "<?=  ADMIN_PATH.'bids/seller_list' ?>",
+      data : {bid_id:id},
       type : "POST",
 
       success:function(resp){
@@ -436,6 +421,10 @@
     })    
   }
 
+
+function cancel_bid(bid_id) {
+  $('#bidd').val(bid_id);
+}
   </script>
 </body>
 

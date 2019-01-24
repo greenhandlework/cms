@@ -4,7 +4,7 @@
 <html lang="en" class="default-style">
 
 <head>
-  <title>CMS - Product product</title>
+  <title>CMS - Product Details</title>
   <?php $this->load->view('hfs/html_header') ?>
 
 <script type="text/javascript">
@@ -31,7 +31,7 @@
       <!-- Layout container -->
       <div class="layout-container">
         <!-- Layout navbar -->
-        <?php $this->load->view('hfs/header') ?>
+       <?php $data['page']=$page; $this->load->view('hfs/header',$data) ?>
         <!-- / Layout navbar -->
 
         <!-- Layout content -->
@@ -42,9 +42,9 @@
              <div class="media align-items-center py-3 mb-4" style="margin-top: -20px !important;margin-bottom:-20px !important;">
               <img src="<?php //echo base_url() ?>upload/products/<?php //echo $product[0]['prod_image1'] ?>" alt="" class="d-block ui-w-80 ui-bordered">
               <div class="media-body ml-4">
-                <h4 class="font-weight-bold mb-2"><?= 'Product Name Here' ?>
+                <h5 class="font-weight-bold mb-2"><?php if(isset($product[0]['prod_name'])){ echo $product[0]['prod_name'];} ?>
                
-                </h4>
+                </h5>
                
               </div>
             </div>
@@ -128,7 +128,25 @@
 
           <div class="card bg-transparent border-success box-shadow-none">
             <div class="card-body">
-              <center><h4 class="card-title" style="color: #02BC77 ">Product Detail</h4><hr></center>
+              <div class="row">
+                <div class="col-sm-8">
+                  <h4 class="card-title" style="color: #02BC77 ">Product Detail</h4>
+                </div>
+                <div class="col-sm-4">
+                  <?php if($product[0]['product_status']==0){ ?>
+                Click to&nbsp;<a href="<?= ADMIN_PATH.'product_catalog/change_product_status_off'?>/<?= $product[0]['prod_id']; ?>/<?= $product[0]['seller_id']; ?>" class="btn btn-xs btn-outline-primary" id="test" onclick="return confirm('Are you sure ?');" >Approve</a>   
+                 <?php }elseif($product[0]['product_status']==1){ ?>
+                Click to&nbsp;<a href="<?= ADMIN_PATH.'product_catalog/change_product_status_liv'?>/<?= $product[0]['prod_id']; ?>/<?= $product[0]['seller_id']; ?>" class="btn btn-xs btn-outline-success" id="test" onclick="return confirm('Are you sure ?');">Live</a>  
+                 <?php }elseif($product[0]['product_status']==2){ ?>
+                Click to&nbsp;<a href="<?= ADMIN_PATH.'product_catalog/change_product_status_off'?>/<?= $product[0]['prod_id']; ?>/<?= $product[0]['seller_id']; ?>" class="btn btn-xs btn-outline-danger" id="test" onclick="return confirm('Are you sure ?');">Offline</a>  
+                  <?php }elseif ($product[0]['product_status']==4) { ?>
+               Click to&nbsp;<a href="<?= ADMIN_PATH.'product_catalog/change_product_status_liv'?>/<?= $product[0]['prod_id']; ?>/<?= $product[0]['seller_id']; ?>" class="btn btn-xs btn-outline-success" id="test" onclick="return confirm('Are you sure ?');">Live</a>  
+                  <?php } ?>
+
+                </div>
+              </div>  
+
+              <!-- <hr> -->
 
                  
                  <!--    <div class="row">
@@ -271,7 +289,8 @@
         </div>
        
         <div class="col-md-6">
-          
+        <form method="post" id="update_data">
+          <input type="hidden" name="product_id" value="<?php echo $product[0]['prod_id']; ?>">
           <div class="row">
             <div class="col-md-12">
                  <div class="card bg-transparent border-success box-shadow-none ">
@@ -280,7 +299,7 @@
                   <div>                       
                     <div class="row">                         
                           <div class="col-sm-12 col-xs-12">
-                            <textarea cols="55" rows="5"  class="form-control form-control-sm"><?=  $product[0]['prod_description'] ?></textarea>
+                            <textarea cols="55" rows="5" name="prod_description"  class="form-control form-control-sm"><?=  $product[0]['prod_description'] ?></textarea>
                           </div>
                        </div>   
               </div>
@@ -293,16 +312,16 @@
           </div><hr>
           <div class="row">
 
-            <div class="col-md-12">
+          <!--     <div class="col-md-12">
                <div class="card bg-transparent border-success box-shadow-none ">
-            <div class="card-body ">
+          <div class="card-body ">
              <center><h4 class="card-title" style="color: #02BC77 ">SEO Detail</h4><hr></center>
             
               <div class="list-group-item list-group-item-action">
                     <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Meta&nbsp;Title</label>
                           <div class="col-sm-8">
-                            <input type="text"  class="form-control form-control-sm" value="<?=  $product[0]['cat_meta_title'] ?>" placeholder="Meta Title">
+                            <input type="text" name="meta_title"  class="form-control form-control-sm" value="" placeholder="Meta Title">
                           </div>
                        </div>
               </div>
@@ -310,7 +329,7 @@
                     <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Meta&nbsp;Key&nbsp;Word</label>
                           <div class="col-sm-8">
-                            <input type="text"  class="form-control form-control-sm" value="<?=  $product[0]['cat_meta_keywords'] ?>" placeholder="Meta Key Word">
+                            <input type="text" name="meta_key" class="form-control form-control-sm" value="" placeholder="Meta Key Word">
                           </div>
                        </div>
               </div>
@@ -318,25 +337,25 @@
                     <div class="row">
                           <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right">Meta&nbsp;Description</label>
                           <div class="col-sm-8">
-                            <textarea   class="form-control form-control-sm" cols="35" rows="5"><?=  $product[0]['cat_meta_description'] ?></textarea>
+                            <textarea name="meta_desc"  class="form-control form-control-sm" cols="35" rows="5"></textarea>
                           </div>
                        </div>   
               </div>  
 
-               <!-- <div class="list-group-item list-group-item-action"> -->
-                    <div class="row">
-                          <label class="col-form-label col-form-label-sm col-sm-4 text-sm-right"></label>
-                          <div class="col-sm-8">
-                            <input type="submit" value="Save"  class="btn btn-success" >
+             
+            </div> 
+          </div>
+            </div>-->
+              
+          </div><br>
+          <div class="row">
+                          <div class="col-sm-4">
+                            <input type="button" value="Save" id="btn12"  class="btn btn-success" >
                             <!-- <input type="text"  class="form-control form-control-sm" placeholder="Meta Key Word"> -->
                           </div>
-                       </div>
-              <!-- </div>  -->
-            </div>
-          </div>
-            </div>
-          </div>
-
+                          <label class="col-form-label col-form-label-sm col-sm-6 " id="success_msg" style="color: green"></label>
+              </div>
+</form>
         </div>
         <div class="w-100"></div>
     
@@ -364,19 +383,19 @@
                             foreach ($qvp as $key => $value) { ?>
                           
 <tr>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['quantity'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['quantity'] ?>">
                                   </td>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['seller_price'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['seller_price'] ?>">
                                   </td>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['ghmargin'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['ghmargin'] ?>">
                                   </td>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['gst'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['gst'] ?>">
                                   </td>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['sell_price'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['sell_price'] ?>">
                                   </td>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['discount'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['discount'] ?>">
                                   </td>
-                           <td><input type="text" class="form-control form-control-sm" value="<?php   echo $value['wcc'] ?>">
+                           <td><input type="text" readonly="" class="form-control form-control-sm" value="<?php   echo $value['wcc'] ?>">
                                   </td>
                             
                           </tr>
@@ -452,8 +471,39 @@
     <div class="layout-overlay layout-sidenav-toggle"></div>
   </div>
   <!-- / Layout wrapper -->
-  <?php $this->load->view('hfs/footer') ?>
+    <?php $this->load->view('hfs/footer') ?>
 
+<script type="text/javascript">
+   $(document).ready(function(){
+
+      $('#btn12').click(function(){
+
+          $.ajax({
+            url  :"<?= ADMIN_PATH.'product_catalog/update_data' ?>",
+            type : "POST",
+            data : $('#update_data').serialize(),
+
+            success:function(resp){
+              console.log(resp);
+              if(resp==1){
+                $('#success_msg').html('Data upadated successfully.');
+              }
+            }//, timeout: 3000 
+
+
+          })
+      });
+
+    //   $("#test").click(function(e){
+    //     if(!confirm('Are you sure?')){
+    //         e.preventDefault();
+    //         return false;
+    //     }
+    //     return true;
+    // });
+   }) 
+
+</script>
 
 </body>
 

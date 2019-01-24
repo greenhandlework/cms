@@ -1,0 +1,308 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700,900);
+
+
+body {
+  	background-color: #f2f2f2;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 16px;
+    color: #555;
+
+    -webkit-font-smoothing: antialiased;
+    -webkit-overflow-scrolling: touch;
+    
+    margin-top: 70px;
+}
+/*navbar section */
+	.navbar {
+	font-weight: 800;
+	font-size: 14px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+	.navbar-inverse {
+		background: #2d2d2d;
+		border-color: #2d2d2d;
+	}
+
+	.navbar-inverse .navbar-nav > .active > a {
+		background: #ff7878
+	}
+	
+	
+	.navbar-inverse .navbar-nav > .active > a hover {
+		background: #ff7878
+	}
+
+	.navbar-inverse .navbar-brand {
+		color: #999999;
+		font-weight: bolder;
+		font-size: 22px;
+		letter-spacing: 1px;
+	}
+
+	.navbar-inverse .navbar-brand i {
+		color: #ff7878;
+		font-size: 22px;
+		letter-spacing: 1px;
+	}
+
+/*nav bar section */
+/* about section */
+	#headerwrap {
+	background: url(green6.jpg) no-repeat center top;
+	margin-top: -10px;
+	padding-top:20px;
+	text-align:center;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 500px;
+	width: 100%;
+	
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#headerwrap h1 {
+	margin-top: 100px;
+	color: white;
+	font-size: 70px;
+	font-weight: 300;
+	letter-spacing: 3px;
+}
+
+
+/*about section */
+/*blue section*/
+#blue {
+	background: #3498db;
+	padding-top: 35px;
+	padding-bottom: 35px;
+}
+
+#blue h4 {
+	color: white;
+	font-weight: 700;
+}
+
+#blue p {
+	color: white;
+}
+
+/*blue section*/
+/*pricing section*/
+	#dg {
+	background: #e0e0e0;
+	padding-top: 70px;
+	padding-bottom: 70px;
+	text-align: center;
+}
+
+#dg h4 {
+	font-weight: 700;
+}
+
+	.pricing-option {
+    padding-bottom: 40px;
+}
+
+.pricing-option .pricing-top {
+    position: relative;
+    background: #222;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+
+    padding: 40px 20px 30px 20px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.pricing-option .pricing-edition {
+    text-transform: uppercase;
+    display: block;
+    font-size: 25px;
+    letter-spacing: 8px;
+}
+
+.pricing-option .price {
+    display: inline-block;
+    position: relative;
+}
+
+.pricing-option .price sup {
+    position: absolute;
+    top: 50px;
+    left: -10px;
+    font-size: 24px;
+}
+
+.pricing-option .price .price-amount {
+    font-size: 108px;
+    letter-spacing: -4px;
+}
+
+.pricing-option .price small {
+    position: relative;
+    left: -10px;
+    font-size: 18px;
+}
+
+.pricing-option ul {
+    list-style: none;
+    margin: 0;
+    background: #eee;
+    text-align: center;
+    padding-left: 0px;
+}
+
+.pricing-option ul li {
+    border-bottom: solid 1px #e1e1e1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.pricing-option .pricing-signup {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 10px;
+    color: white;
+    background: #1abc9c;
+}
+
+.pricing-option .pricing-signup:hover {
+    background: #ff7878;
+}
+
+/*pricing section*/
+/* footer section */
+		#contact .box {
+		  background-color: #222;
+		  color: #999;
+		}
+		#contact .box h1,
+		#contact .box h2,
+		#contact .box h3 {
+		  color: #fff;
+		}
+		#contact .box a {
+		  color: #999;
+		}
+		#contact .box a:hover {
+		  color: #52b6ec;
+		}
+		#contact .box input[type="text"],
+		#contact .box input[type="email"],
+		#contact .box textarea {
+		  background-color: #111;
+		  border: 0;
+		  -webkit-transition: 1000ms;
+		  -moz-transition: 1000ms;
+		  -o-transition: 1000ms;
+		  transition: 1000ms;
+		}
+		#contact .box input[type="text"]:focus,
+		#contact .box input[type="email"]:focus,
+		#contact .box textarea:focus {
+		  background-color: #000;
+		  -webkit-box-shadow: none;
+		  -moz-box-shadow: none;
+		  box-shadow: none;
+		}
+		.box {
+		  padding: 50px 30px;
+		  background: #fff;
+		  border-bottom: 1px solid #e9e9e9;
+		  position: relative;
+		}
+		.box.first {
+		  margin-top: -40px;
+		  border-radius: 5px 5px 0 0;
+		}
+		.box.last {
+		  border-radius: 0 0 5px 5px;
+		}
+		.box h2 {
+		  padding: 10px 30px;
+		  display: inline-block;
+		  border-radius: 4px;
+		  position: relative;
+		  margin-bottom: 30px;
+		  font-size: 48px;
+		}
+		.icon-social {
+		  border: 0;
+		  color: #fff;
+		  border-radius: 100%;
+		  display: inline-block !important;
+		  width: 36px;
+		  height: 36px;
+		  line-height: 36px;
+		  text-align: center;
+		  padding: 0;
+		}
+		.icon-social.icon-facebook {
+		  background: #4f7dd4;
+		}
+		.icon-social.icon-facebook:hover {
+		  background: #789bde;
+		}
+		.icon-social.icon-twitter {
+		  background: #5bceff;
+		}
+		.icon-social.icon-twitter:hover {
+		  background: #8eddff;
+		}
+		.icon-social.icon-linkedin {
+		  background: #21a6d8;
+		}
+		.icon-social.icon-linkedin:hover {
+		  background: #49b9e3;
+		}
+		
+		.icon-social.icon-youtube {
+		  background: #ce332d;
+		}
+		.icon-social.icon-youtube:hover {
+		  background: #da5954;
+		}
+		.icon-social:hover {
+		  color: #fff;
+		}
+		ul.social {
+		  list-style: none !important;
+		  margin: 10px 0 0;
+		  padding: 0;
+		}
+		ul.social > li {
+		  margin: 0 0 20px;
+		}
+		ul.social > li > a {
+		  display: block;
+		  font-size: 18px;
+		}
+		ul.social > li > a i {
+		  margin-right: 10px;
+		  text-decoration: none;
+		}
+		ul.social >li > a {
+			text-decoration: none;
+		}
+
+/*footer section */

@@ -35,9 +35,24 @@
           <div class="container-fluid flex-grow-1 container-p-y">
 
             <div class="media align-items-center py-3 mb-4" style="margin-top: -20px !important;margin-bottom:-20px !important;">            
-                <div class="media-body ml-4">
-                  <h4 class="font-weight-bold mb-2"><?= 'Seller Name Here' ?></h4>              
+                <div class="media-body ml-2">
+                  <h4 class="font-weight-bold mb-2"><?php if(isset($check_user_stat[0]['name'])){ echo $check_user_stat[0]['name']; }elseif(isset($check_user_stat1[0]['name'])){ echo $check_user_stat1[0]['name'];} ?></h4>              
                 </div>
+                  <?php 
+                    if(isset($check_user_stat1)){
+                      if($check_user_stat1[0]['account_status']=="Offline" || $check_user_stat1[0]['account_status']=='Yes'){
+                     ?>
+                <div class="media-body ml-2">Click to 
+                
+
+                      <?php if($check_user_stat1[0]['account_status']=='Offline'){ ?>
+                        <a href="<?= ADMIN_PATH.'seller_accounts/change_seller_status_yes' ?>/<?php echo $check_user_stat1[0]['user_id'] ?>" class="btn btn-xs btn-outline-success" onclick="return confirm('Are you sure ?');" >Live</a>
+                    <?php }elseif($check_user_stat1[0]['account_status']=='Yes'){ ?>
+                        <a href="<?= ADMIN_PATH.'seller_accounts/change_seller_status_off' ?>/<?php echo $check_user_stat1[0]['user_id'] ?>" class="btn btn-xs btn-outline-danger" onclick="return confirm('Are you sure ?');" >Offline</a>
+                    <?php  }   ?> 
+                    this seller
+                </div>
+              <?php } } ?>
             </div>
 <hr>
             <div class="row">
@@ -59,6 +74,7 @@
                 </div>
               </div>
 
+           <?php if(isset($check_user_stat1)){ ?>   
               <div class="col-md-4 ">
                 <div class="card mb-4">
                   <div class="w-100">
@@ -173,7 +189,7 @@
                 </div>
               </div>
             </div>
-
+<?php } ?>
 
 
           </div>

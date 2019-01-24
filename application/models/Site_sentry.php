@@ -488,9 +488,20 @@ GROUP BY p.prod_id
 
 HAVING  max(qvp.quantity) > p.qns
 
-ORDER BY qvp.quantity DESC ##limit 0,1000";
+ORDER BY qvp.quantity DESC limit 0,10";
 $sql=$this->db->query($query_city);
 return $sql->result_array();
+}
+
+function letest_sell(){
+	$query_city="SELECT p.prod_name,p.prod_id,l.user_id,l.first_name,l.last_name,c.cat_id,c.cat_name,s.section_name,cp.* FROM cart_product as cp
+	LEFT JOIN products as p ON p.prod_id=cp.product_id
+	LEFT JOIN login as l ON l.user_id=cp.seller_id
+	LEFT JOIN category as c ON c.cat_id=p.cat_id
+	LEFT JOIN sections as s ON s.section_id=p.section_id
+	WHERE cp.payment_done='1' AND cp.status='success' order by cp.process_time DESC LIMIT 0,10";
+	$sql=$this->db->query($query_city);
+return $sql->result_array(); 
 }
 /////////////////////////////////////////////////////Buyer/////////////////////////////////////////////////////////////////////////////
 
@@ -557,7 +568,28 @@ return $sql->result_array();
       return $sql->result_array();
 	}
 	
-	
+	function Get_orderlist_buyerdashboard(){
+	//	$this->db->trans_begin();
+		//user Section, category, Seller, Product,cart_product//LEFT JOIN category as c ON c.cat_id=cp.cuser_id
+		$query="SELECT sm.mobile_number as sellermobile,sm.gst as sellergst,l.id,l.user_id,l.first_name,l.last_name,l.name,l.username,l.user_type,l.account_status,l.role_id,l.email,l.mobile_number,l.org_name,l.address_1,l.address_2,l.state,l.city,l.zipcode,l.gst,s.*,c.*,se.*,p.*,cp.* FROM cart_product as cp
+		LEFT JOIN login as l ON l.user_id=cp.cuser_id
+		LEFT JOIN login as sm ON sm.user_id=cp.seller_id
+		LEFT JOIN products as p ON p.id=cp.pid
+		LEFT JOIN seller as se ON se.seller_id=cp.seller_id
+		LEFT JOIN sections as s ON s.section_id=p.section_id
+		LEFT JOIN category as c ON c.cat_id=p.cat_id ORDER BY cp.payment_date DESC limit 0,20";
+		
+		
+		$sql = $this->db->query($query);
+		/*if ($this->db->trans_status() === FALSE){
+        $this->db->trans_rollback();
+        }else{
+        $this->db->trans_commit();
+		
+		 }*/
+      return $sql->result_array();
+	}
+
 function Get_enquiry_chart(){
 	$enquiry_chart="Select product,count(product) as Total FROM bulk_order where from_type = 'enquiry' and status='1' AND product!='' or product!='0'
 group by product ORDER BY Total DESC limit 0,5";
